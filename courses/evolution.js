@@ -1,89 +1,43 @@
-/* Evolution — twenty nights. Bridge from atoms, bonds, and molecules. */
+/* Evolution course. */
 (function () {
   window.SCIENCE_COURSES = window.SCIENCE_COURSES || [];
   window.SCIENCE_COURSES.push({
     id: "evolution",
     title: "Evolution",
     added: "2026-11-08",
-    blurb: "From DNA — a molecule you can describe with the chemistry you just finished — to natural selection, fossils, and the human twig on the tree of life.",
+    blurb: "How living things change over time. The course covers DNA and inheritance, natural selection, the evidence from fossils and genetics, and human evolution.",
     lessons: [
       {
-        id: "same-stuff",
-        title: "Made of the Same Stuff",
-        tease: "Life uses ordinary atoms, then does something a rock cannot.",
-        reviewLabel: "From chemistry",
+        id: "dna",
+        title: "Cells and DNA",
+        tease: "What DNA is made of and how cells copy it.",
+        reviewLabel: "Background",
         review: [
-          "You already know the ingredients. Protons, neutrons, and electrons make atoms. Atoms stick together by sharing or trading electrons, and that stickiness is a chemical bond. A molecule is atoms that have stuck.",
-          "Tonight we don't leave that behind. We ask what some molecules can do that a rock never does."
+          "Atoms are made of protons, neutrons, and electrons. Atoms bond to each other by sharing or transferring electrons. A molecule is two or more atoms held together by bonds. DNA is a very large molecule."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "A rock is made of atoms. So are you. So is a beetle, a pine tree, and the bacteria on a doorknob. There is no special life-atom hiding on the periodic table. The difference is not the ingredients. It is what some arrangements of those ingredients can do.",
-              "Living things are made of cells. A cell is a tiny room. The walls are molecules, and the room is full of more molecules, bumping into each other in water. You have tens of trillions of these rooms. A bacterium is one room, living on its own. In plants and animals, the DNA sits in an inner room called the nucleus. Bacteria have DNA too, just not in a nucleus.",
-              "DNA is a molecule you could describe with the chemistry you already have. Its backbone is sugar and phosphate, held by strong covalent bonds. Four kinds of bases hang off that backbone: adenine, cytosine, guanine, and thymine — A, C, G, and T. Two strands lie side by side. The bases reach across and hold with hydrogen bonds, which are weaker, so the strands can be pulled apart without snapping the backbone."
+              "All living things are made of the same kinds of atoms as rocks and water, mostly carbon, hydrogen, oxygen, and nitrogen, with smaller amounts of phosphorus and sulfur. What makes something alive is how those atoms are arranged into molecules and what the molecules do together.",
+              "Living things are made of cells. The human body has about 30 trillion cells. A bacterium is a single cell. Each cell is enclosed by a membrane and filled with water and many kinds of molecules. In animals, plants, and fungi, the cell has a nucleus that holds most of the DNA. Bacteria have DNA but no nucleus."
             ]
           },
-          {
-            type: "ask",
-            text: "Hydrogen bonds showed up in chemistry as a weaker attraction. Why would 'weaker' be useful in DNA, instead of a flaw?"
-          },
+          { type: "h", text: "Structure of DNA" },
           {
             type: "prose",
             paragraphs: [
-              "A cell can open that zipper, match a new base to each old one, and end up with two DNA molecules where there was one. As far as we know, every living thing on Earth uses this trick. A granite rock does not. A flame does not, even though a flame grows and takes in fuel. DNA can be copied, letter by letter, and the copy can be copied again.",
-              "That is the bridge from the chemistry unit to this whole month. Life is not a different kind of matter. It is matter that copies a recipe, and then does it again, for billions of years, with small changes along the way. Tomorrow we look at the recipe itself."
+              "DNA stands for deoxyribonucleic acid. It is a long molecule built from repeating units called nucleotides. Each nucleotide has three parts: a sugar, a phosphate group, and a base. The sugars and phosphates link into a chain called the backbone. The links in the backbone are strong covalent bonds.",
+              "There are four bases: adenine (A), thymine (T), cytosine (C), and guanine (G). DNA has two strands that run side by side and twist into a double helix. The bases of one strand face the bases of the other strand and are joined by hydrogen bonds. Adenine pairs only with thymine, using two hydrogen bonds. Cytosine pairs only with guanine, using three hydrogen bonds. Other combinations do not fit.",
+              "Because of this pairing, each strand determines the other. If one strand reads A-C-T-G, the other strand reads T-G-A-C. Hydrogen bonds are much weaker than covalent bonds, so the two strands can be pulled apart without breaking either backbone."
             ]
           },
-          {
-            type: "aside",
-            title: "A fence we can leave for later",
-            text: "A few viruses use RNA instead of DNA, and biologists still argue about whether viruses count as alive. They are molecules that get copied too, but only by borrowing a cell. You don't need that fight tonight."
-          }
-        ],
-        activity: {
-          links: [
-            {
-              kind: "Look",
-              title: "What are DNA and Genes?",
-              source: "Learn.Genetics · University of Utah",
-              url: "https://learn.genetics.utah.edu/content/basics/dna/",
-              note: "A short, clear tour. Tap through it together if you want pictures of the real molecule."
-            }
-          ]
-        },
-        talk: [
-          "If you could shrink down and stand inside a cell, would you expect tiny animals, or a crowd of molecules in water?",
-          "What can DNA do that the molecules in a rock cannot?"
-        ],
-        lights: "Life is ordinary matter, arranged so a recipe can be copied."
-      },
-      {
-        id: "longest-recipe",
-        title: "The Longest Recipe",
-        tease: "Four letters, hydrogen bonds, and a gene that is only a stretch of them.",
-        reviewLabel: "Yesterday",
-        review: [
-          "Living things are made of the same kinds of atoms as everything else. What is special is DNA: a molecule with a strong backbone and weaker hydrogen bonds down the middle, so it can be unzipped and copied."
-        ],
-        body: [
+          { type: "h", text: "Copying DNA" },
           {
             type: "prose",
             paragraphs: [
-              "Each unit of DNA is a nucleotide. That is a package of three parts: a sugar, a phosphate, and one base. The sugars and phosphates link into the sides of a ladder. The bases are the rungs. The shape is a twisted ladder, a double helix, because that is how these molecules fit when they stack.",
-              "The rungs are picky. A holds T, with two hydrogen bonds. C holds G, with three. A does not hold C. The shapes and the charges don't line up. So if one strand says A-C-T-G, the other strand has to say T-G-A-C. Each strand is a template for the other. That is why copying is possible at all.",
-              "A gene is not the whole ladder. A gene is a stretch of bases the cell knows how to read. Humans have on the order of 20,000 genes, scattered through about three billion letters. A lot of the DNA between genes is not a protein recipe. Some of it is switches, telling a gene when to be read. None of it is junk we get to ignore, and none of it is a secret message in English. It is chemistry."
-            ]
-          },
-          {
-            type: "ask",
-            text: "If one strand reads C-C-A-T, what must the other strand read? Don't peek at the activity yet if you want to try it cold."
-          },
-          {
-            type: "prose",
-            paragraphs: [
-              "Here is the part that will matter all month. The order of the letters is the information. Change the order, and you may change what the cell builds. The molecule doesn't know what it 'means.' It just holds still long enough to be copied, and to be read. Tomorrow: what happens when the copy isn't perfect."
+              "A cell copies its DNA before it divides. Enzymes separate the two strands. Another enzyme, DNA polymerase, moves along each old strand and adds the matching base at each position to build a new strand. The result is two DNA molecules, and each one has one old strand and one new strand.",
+              "The order of the bases along a strand is the information in DNA. The human genome, which is the complete set of DNA in a cell, is about 3 billion base pairs long. All cellular life uses DNA to store its genetic information. Some viruses use RNA, a related molecule. Biologists disagree about whether viruses count as living things, because a virus can only reproduce inside a host cell."
             ]
           }
         ],
@@ -91,46 +45,117 @@
           widget: "pairs",
           links: [
             {
+              kind: "Look",
+              title: "What are DNA and Genes?",
+              source: "Learn.Genetics · University of Utah",
+              url: "https://learn.genetics.utah.edu/content/basics/dna/",
+              note: "An overview of DNA, genes, and chromosomes."
+            },
+            {
               kind: "Try",
               title: "Build a DNA Molecule",
               source: "Learn.Genetics · University of Utah",
               url: "https://learn.genetics.utah.edu/content/basics/builddna/",
-              note: "Happier on a computer than on a phone. The matcher on this page is the one to use here."
+              note: "An interactive that builds a DNA molecule base by base. It works best on a computer."
             }
           ]
         },
         talk: [
-          "Why can the cell copy DNA, instead of having to invent a new strand from scratch every time?",
-          "Is a gene the whole DNA molecule, or a stretch of it?"
+          "Why does it matter that the bonds between the two strands are weaker than the bonds in the backbone?",
+          "If one strand of DNA reads C-C-A-T, what does the other strand read?"
         ],
-        lights: "A pairs with T, C pairs with G, and a gene is a readable stretch of those letters."
+        summary: "DNA is a double-stranded molecule. A pairs with T and C pairs with G, so each strand can be used as a template for a new strand."
       },
       {
-        id: "copy-typos",
-        title: "Copying, and the Typos",
-        tease: "Most copies are astonishingly good. A few letters still change.",
-        reviewLabel: "Yesterday",
+        id: "genes-and-proteins",
+        title: "Genes and proteins",
+        tease: "How a gene is read to build a protein.",
         review: [
-          "DNA is a twisted ladder. A holds T, C holds G, by hydrogen bonds. One strand is a template for the other, and a gene is a stretch of letters the cell can read."
+          "DNA has two strands joined by hydrogen bonds between the bases. A pairs with T and C pairs with G. The order of the bases is the information, and cells copy DNA by using each strand as a template."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "When a cell copies DNA, it unzips the ladder and builds a new strand on each side. The machinery is good at this, and it even proofreads. It is not perfect. A wrong base sometimes stays. Radiation, and some chemicals, can damage a letter too. A change in the sequence is a mutation.",
-              "The word sounds like a monster movie. It isn't a judgment. A mutation is a typo. Most typos do nothing you could notice. Some break a gene. A few, rarely, change a trait in a way that turns out to be useful in a particular place. The mutation does not happen because it would be useful. The copy error happens first. Usefulness, if it ever shows up, comes later.",
-              "Here is a number worth keeping. A human baby is born with on the order of a hundred new letter changes that neither parent had, out of three billion letters. That is a stunningly accurate copy, and it is still not a photocopy. Those new letters are the raw material evolution has to work with."
+              "A gene is a section of DNA that contains the instructions for making one molecule, usually a protein. Humans have about 20,000 genes that code for proteins. Together they make up only about 1 to 2 percent of the human genome. Much of the remaining DNA helps control when genes are active, and some of it has no known function.",
+              "Proteins do most of the work in a cell. Hemoglobin carries oxygen in red blood cells. Keratin makes up hair and nails. Collagen gives strength to skin and bones. Enzymes speed up chemical reactions. Amylase, an enzyme in saliva, breaks starch into sugars."
+            ]
+          },
+          { type: "h", text: "From gene to protein" },
+          {
+            type: "prose",
+            paragraphs: [
+              "A cell makes a protein in two steps. In the first step, called transcription, the gene is copied into a molecule of RNA. RNA is similar to DNA, but it has a single strand and uses uracil (U) in place of thymine. In the second step, called translation, a ribosome reads the RNA and builds the protein.",
+              "The ribosome reads the RNA three bases at a time. Each group of three bases is called a codon. Most codons specify one of 20 amino acids, and three codons mean stop. The ribosome links the amino acids into a chain in the order the codons specify. There are 64 possible codons and only 20 amino acids, so most amino acids are specified by more than one codon.",
+              "The chain of amino acids folds into a three-dimensional shape that depends on its sequence. The shape matters because proteins work by fitting to other molecules. An enzyme, for example, has a shape that matches the molecule it acts on. A different sequence can produce a different shape, and a different shape can change or stop the protein's function."
             ]
           },
           {
-            type: "ask",
-            text: "If a copy error happens in a skin cell, on your arm, does a future child inherit it? What would have to be true for a child to inherit a mutation?"
+            type: "aside",
+            title: "Sickle cell disease",
+            text: "Sickle cell disease is caused by a change in a single base in the gene for one part of hemoglobin. The change replaces one amino acid, glutamic acid, with another, valine. When oxygen is low, hemoglobin molecules that contain valine stick together and bend red blood cells into a curved shape. These cells can block small blood vessels. One base change in DNA changes one amino acid, and that changes how the protein behaves."
           },
           {
             type: "prose",
             paragraphs: [
-              "Only mutations in the cells that become eggs or sperm get passed on. A scar, a suntan, a muscle you built, a mutation in your skin: those stay in this body. That is easy to say and hard to remember, because it is tempting to think a life writes itself into the recipe. It doesn't. The recipe that goes forward is the one in the egg and the sperm.",
-              "The copier below is sloppy on purpose, so a typo shows up before you fall asleep. Real cells are much, much more careful. Watch the gold letters anyway. Nobody chose them."
+              "Genes do not determine everything about a body. The environment also matters. Nutrition affects how tall a person grows, and exercise affects muscle size. Only the genes are inherited from parents."
+            ]
+          }
+        ],
+        activity: {
+          links: [
+            {
+              kind: "Look",
+              title: "What are Proteins?",
+              source: "Learn.Genetics · University of Utah",
+              url: "https://learn.genetics.utah.edu/content/basics/proteins/",
+              note: "An overview of what proteins are and what they do."
+            },
+            {
+              kind: "Try",
+              title: "Transcribe and Translate a Gene",
+              source: "Learn.Genetics · University of Utah",
+              url: "https://learn.genetics.utah.edu/content/basics/transcribe/",
+              note: "An interactive that walks through transcription and translation. It works best on a computer."
+            }
+          ]
+        },
+        talk: [
+          "Why can a change in one base change what a protein does?",
+          "Several codons can specify the same amino acid. What happens to the protein if a mutation changes a codon into another codon for the same amino acid?"
+        ],
+        summary: "A gene is copied into RNA, and the RNA is read three bases at a time to build a chain of amino acids. The chain folds into a protein, and the protein's shape determines what it does."
+      },
+      {
+        id: "mutations",
+        title: "Mutations",
+        tease: "How the DNA sequence changes and which changes are inherited.",
+        review: [
+          "A gene is a section of DNA that is copied into RNA and used to build a protein. The RNA is read in codons, and the chain of amino acids folds into a protein. The shape of the protein determines what it does."
+        ],
+        body: [
+          {
+            type: "prose",
+            paragraphs: [
+              "A mutation is a change in the DNA sequence. Most mutations come from errors made while copying DNA. DNA polymerase adds a wrong base about once in every 100,000 bases, but other enzymes check the new strand and repair most of the mistakes. After this proofreading, about one error in every 100 million bases remains. Mutations can also be caused by radiation, such as ultraviolet light and X-rays, and by some chemicals.",
+              "A newborn human has about 70 mutations that were not present in either parent. That is out of about 6 billion bases, counting the two copies of the genome."
+            ]
+          },
+          { type: "h", text: "Kinds of mutations" },
+          {
+            type: "prose",
+            paragraphs: [
+              "A substitution replaces one base with another. An insertion adds one or more bases, and a deletion removes one or more. An insertion or deletion that is not a multiple of three shifts the reading of every codon after it, which usually stops the protein from working.",
+              "Most mutations have no noticeable effect. Many occur in DNA that has no important function, and some change a codon into another codon for the same amino acid. Some mutations are harmful, for example by stopping a protein from working. A few are helpful in a particular environment. A mutation that lets adults digest the milk sugar lactose is common in people whose ancestors kept dairy animals.",
+              "Mutations are random with respect to what an organism needs. A mutation does not happen because it would be useful. Whether a mutation is harmful, helpful, or neutral depends on the environment the organism lives in."
+            ]
+          },
+          { type: "h", text: "Which mutations are inherited" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Only mutations in the cells that make eggs and sperm can be passed on to children. These are called germline mutations. A mutation in any other body cell is called a somatic mutation and affects only that person. A mutation in a skin cell caused by sunlight is not passed on. Changes made to the body during life, such as bigger muscles from exercise or a scar from an injury, are not passed on either.",
+              "Mutation is the source of new alleles, which are different versions of a gene. All of the variation that natural selection acts on first came from mutations."
             ]
           }
         ],
@@ -142,95 +167,46 @@
               title: "Mutations are changes in genetic information",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/mutations/",
-              note: "A clear museum page if you want the grown-up version of tonight's idea."
+              note: "A short article on how mutations happen and what they do."
             }
           ]
         },
         talk: [
-          "Why is it important that mutations are not 'trying' to help?",
-          "Would you rather a copy machine made zero mistakes forever, or a very small number? What would each world be like?"
+          "Why is a mutation in a skin cell not passed on to a child?",
+          "A mutation can be harmful in one environment and helpful in another. How could that happen?"
         ],
-        lights: "A mutation is a copy error. Only errors in egg or sperm cells can be inherited, and they are not made on purpose."
+        summary: "A mutation is a change in the DNA sequence. Mutations are random with respect to what an organism needs, and only mutations in egg and sperm cells are inherited."
       },
       {
-        id: "recipe-to-body",
-        title: "From Recipe to a Living Body",
-        tease: "The cell reads DNA in threes and builds a protein that folds into a shape.",
-        reviewLabel: "Yesterday",
+        id: "inheritance",
+        title: "Inheritance",
+        tease: "How genes pass from parents to children and why siblings differ.",
         review: [
-          "Copying DNA is extremely accurate and still not perfect. A mutation is a typo. Most do nothing visible. Only a change in the cells that make eggs or sperm can reach a child. The typo is not trying to be helpful."
+          "A mutation is a change in the DNA sequence, usually caused by a copying error. Most mutations have no effect, some are harmful, and a few are helpful. Only mutations in egg and sperm cells are passed on to children."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "DNA mostly stays put. A cell that wants to use a gene makes a temporary copy in a related molecule, RNA. RNA uses the base U instead of T. That disposable note travels out, and a molecular machine called a ribosome reads it.",
-              "The ribosome reads three letters at a time. Three letters are a codon, and a codon matches one amino acid, or a signal that says stop. Amino acids are small molecules linked into a chain. The chain folds up. The fold is the protein. Shape is the whole job: a protein fits other molecules the way a key fits a lock, which is the same idea as molecules fitting by their shape and their bonds.",
-              "Keratin in hair is a protein. So is hemoglobin, which carries oxygen in red blood cells. So are enzymes, which make chemical reactions go that would otherwise be hopelessly slow. Change one letter in the recipe and you might change one amino acid, and the fold might change, and the job might change. Or nothing much happens, because several codons mean the same amino acid. The code has synonyms."
+              "Humans have 23 pairs of chromosomes, which is 46 in total. A person receives one chromosome of each pair from the mother and one from the father. For most genes a person has two copies, one from each parent. The two copies can be different versions, called alleles.",
+              "Offspring do not receive a blend of their parents' traits. Alleles are passed on whole. Gregor Mendel, an Austrian monk, worked this out in the 1860s by crossing pea plants. When he crossed purple-flowered plants with white-flowered plants, all of the offspring had purple flowers. When he crossed those offspring with each other, about one in four of the next generation had white flowers. The white-flower allele had not disappeared. It was present in the purple-flowered plants and was passed on. An allele that shows up when only one copy is present is called dominant. An allele that is hidden when a dominant allele is present is called recessive."
             ]
           },
-          {
-            type: "aside",
-            title: "One letter, one fold",
-            text: "Sickle cell is a famous case. A single letter change in the hemoglobin gene swaps one amino acid. The protein can stick to itself, and red blood cells bend into crescents. We'll come back to why that version of the gene is common in some places. Tonight, the point is only that a letter can matter because a shape can matter."
-          },
+          { type: "h", text: "Making eggs and sperm" },
           {
             type: "prose",
             paragraphs: [
-              "So a body is not DNA. A body is what cells build, mostly proteins, by reading DNA, plus everything the environment does on the way: food, temperature, practice, injury. The recipe is inherited. The finished cake is not. That distinction is going to do a lot of work later, when we ask what selection can and cannot see."
+              "Eggs and sperm are made by a kind of cell division called meiosis. Each egg or sperm receives one chromosome from each of the 23 pairs, chosen at random. That alone allows about 8 million different combinations from one person. In addition, before the chromosomes separate, the two chromosomes in each pair swap sections. This is called crossing over. As a result, the chromosomes a person passes on are mixtures of the chromosomes that person received from their own parents.",
+              "Because of this shuffling, siblings with the same parents receive different combinations of alleles. Only identical twins have the same DNA. Identical twins form when one fertilized egg splits into two."
             ]
-          }
-        ],
-        activity: {
-          links: [
-            {
-              kind: "Look",
-              title: "What are Proteins?",
-              source: "Learn.Genetics · University of Utah",
-              url: "https://learn.genetics.utah.edu/content/basics/proteins/",
-              note: "Short and visual. This is the one to open tonight."
-            },
-            {
-              kind: "Try",
-              title: "Transcribe and Translate a Gene",
-              source: "Learn.Genetics · University of Utah",
-              url: "https://learn.genetics.utah.edu/content/basics/transcribe/",
-              note: "A hands-on, better on a computer. Skip it on a phone if it misbehaves. The idea is already in the reading."
-            }
-          ]
-        },
-        talk: [
-          "Why does the shape of a protein matter more than its 'name'?",
-          "If two codons mean the same amino acid, what happens to the protein when a mutation swaps one for the other?"
-        ],
-        lights: "Cells read DNA in threes, build a chain of amino acids, and the chain folds into a protein whose shape does the work."
-      },
-      {
-        id: "not-copies",
-        title: "Why Siblings Aren't Copies",
-        tease: "You get a shuffled half from each parent, not a blend and not a photocopy.",
-        reviewLabel: "Yesterday",
-        review: [
-          "A gene is read into RNA, then into a protein. Proteins fold, and the fold does the job. A letter change sometimes changes the fold. The body you build is not what gets inherited — the recipe is."
-        ],
-        body: [
+          },
+          { type: "h", text: "What is and is not inherited" },
           {
             type: "prose",
             paragraphs: [
-              "You do not get a blended average of your parents, the way two paints mix into one new color. For each gene, you get one copy from the egg and one copy from the sperm. Those copies can be different versions. The versions are called alleles. Both are real recipes, not a smoothie of the two.",
-              "The cell that becomes an egg or a sperm does not get the full deck. It gets one shuffled half. The shuffle has two parts worth knowing, and you can skip the technical names. First, each pair of chromosomes lines up and you pass on one of the pair, at random. Second, the pairs can trade pieces before that happens. So the half that ends up in the egg is not a photocopy of half of the parent. It is a new mix.",
-              "That is why siblings in the same family are not the same person twice. Same parents, different hands of cards. Identical twins are the exception: one egg, one sperm, then a split. Everyone else is a fresh deal."
-            ]
-          },
-          {
-            type: "ask",
-            text: "Bacteria mostly copy themselves instead of shuffling with a partner. Where does their variation come from, if not from this card shuffle?"
-          },
-          {
-            type: "prose",
-            paragraphs: [
-              "From mutation, mostly, and from occasionally picking up DNA other bacteria have left around. Both paths put inherited differences into the world. Sexual reproduction is a fast mixer. Mutation is the only way truly new letters appear. Evolution needs differences that can be inherited. Tonight's whole point is where a population gets those differences before anything is 'selected.'",
-              "Some traits really do track one gene: a version you can follow through a family. Many traits, like height, come from lots of genes plus how you ate and slept while you were growing. Either way, you inherited genes. You did not inherit a memory, or a callus, or your parents' skills. Those have to be learned or built again."
+              "Most traits depend on many genes plus the environment. Height is influenced by hundreds of genes, and also by nutrition and health during childhood. Genes are inherited. Skills, knowledge, and changes the body undergoes during life, such as a callus or a scar, are not.",
+              "Bacteria reproduce by dividing in two, so offspring are nearly identical to the parent cell. Their variation comes mainly from mutation. Bacteria can also take up DNA from other bacteria or from their surroundings.",
+              "Mutation creates new alleles. Sexual reproduction shuffles existing alleles into new combinations. Together they produce the variation found in a population."
             ]
           }
         ],
@@ -241,43 +217,46 @@
               title: "What is Inheritance?",
               source: "Learn.Genetics · University of Utah",
               url: "https://learn.genetics.utah.edu/content/basics/inheritance/",
-              note: "A short walk through how traits are passed down. Good on a phone."
+              note: "An overview of how traits are passed from parents to children."
             }
           ]
         },
         talk: [
-          "Why aren't you a 50/50 paint mix of your parents?",
-          "Name one thing a parent can pass on in DNA, and one thing a parent can only pass on by teaching."
+          "Two purple-flowered pea plants can have a white-flowered offspring. How is that possible?",
+          "Name one thing a parent passes on through DNA and one thing a parent can pass on only by teaching."
         ],
-        lights: "Children inherit a shuffled half of each parent's DNA, so families vary before selection ever starts."
+        summary: "Children inherit one allele of each gene from each parent, and the chromosomes are shuffled when eggs and sperm are made. Siblings differ for that reason."
       },
       {
-        id: "more-babies",
-        title: "More Babies Than Seats",
-        tease: "Four plain facts, and nobody has to be in charge.",
-        reviewLabel: "Yesterday",
+        id: "natural-selection",
+        title: "Natural selection",
+        tease: "How inherited traits become more or less common in a population.",
         review: [
-          "You inherit one gene copy from each parent, not a blend. Eggs and sperm get a shuffled half, so siblings differ. Mutations add brand-new letters. Differences you can inherit are now sitting in the population."
+          "Mutations produce new alleles, and sexual reproduction combines alleles in new ways. Offspring differ from their parents and from each other. Genes are inherited, but changes to the body during life are not."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "An oak tree drops thousands of acorns. Not every acorn becomes a tree. A pair of robins can raise more chicks than will find a territory next spring. That is ordinary, not cruel, and it is the first fact. More young are born than will survive and have young of their own.",
-              "Second fact: the young are not identical. You saw why last night, and the night before. Third: some of those differences are inherited. Fourth: the ones who do have young are not a perfect random sample. In a particular place, some differences make it a little more likely that an animal finds food, avoids being eaten, or raises babies. Those versions show up more often in the next generation.",
-              "That sorting is natural selection. Nobody holds a clipboard. The environment does it, just by being the place where some versions leave more offspring than others. Charles Darwin and Alfred Russel Wallace both saw it in the 1800s. Wallace's letter is what finally pushed Darwin to publish."
+              "Natural selection is the process by which inherited traits that help organisms survive and reproduce become more common in a population over generations. It follows from four facts.",
+              "First, organisms produce more offspring than can survive. An oak tree drops thousands of acorns in a year, and a female cod can release millions of eggs. Most of the offspring die before they reproduce. Second, the individuals in a population differ from each other in size, color, speed, resistance to disease, and many other traits. Third, some of those differences are inherited. Fourth, some inherited differences make an individual more likely to survive and reproduce in its environment.",
+              "When all four facts hold, the next generation contains a larger share of the helpful traits than the previous generation did. Over many generations the population changes. No one chooses which individuals survive. The environment does, through predators, food supply, climate, and disease."
             ]
           },
-          {
-            type: "aside",
-            title: "A phrase that causes trouble",
-            text: "'Survival of the fittest' does not mean the strongest, the smartest, or the one we admire. Fitness here means leaving more offspring in that environment. A thick coat is fit in a snowfield and unfit in a desert. A bright feather can be a disadvantage with hawks and an advantage with mates. That second kind is sexual selection, and it is still selection: it changes who has babies."
-          },
+          { type: "h", text: "Fitness" },
           {
             type: "prose",
             paragraphs: [
-              "Selection does not give an animal a new trait because the animal needs it. It only changes how common the inherited traits already are. If a useful version doesn't exist in the population, selection cannot conjure it. Mutation has to have supplied something to work with, or selection has nothing new to favor.",
-              "And selection is not the only way frequencies change. In a very small group, plain luck can make a version common or wipe it out. That luck is called drift. We'll come back to it. Tonight, learn selection cleanly: inherited differences, too many young for the seats, and a place that is not neutral about the differences."
+              "In biology, fitness is the number of offspring an individual leaves that survive to reproduce, compared with other individuals in the same population. Fitness is not the same as strength or health. A thick coat of fur gives high fitness in a cold place and low fitness in a hot place. A trait is helpful only in relation to a particular environment.",
+              "'Survival of the fittest' is a short way to describe this, but reproduction is what counts. An animal that lives a long time but leaves no offspring has a fitness of zero. Some traits improve reproduction without helping survival. A male peacock's long tail makes him easier for predators to catch, but peahens prefer to mate with males that have larger tails. This is called sexual selection."
+            ]
+          },
+          { type: "h", text: "What natural selection does not do" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Natural selection acts only on variation that already exists. It does not give organisms the traits they need. If no individual in a population has a helpful trait, selection cannot produce it, and new variation comes from mutation. Individual organisms do not change during their lives because of selection. Populations change over generations because individuals with helpful traits leave more offspring.",
+              "Natural selection is not the only cause of change in a population. In a small population, chance alone can make an allele more common or make it disappear. This is called genetic drift."
             ]
           }
         ],
@@ -288,43 +267,46 @@
               title: "Living Things Change",
               source: "Crash Course Kids",
               url: "https://www.youtube.com/watch?v=xDSFlRunlrU",
-              note: "A short cartoon, a few minutes. The suggestions beside a YouTube video are not part of the lesson. The cartoon is the simple version. The careful version is the one you just read: populations change, because some individuals have more young."
+              note: "A short animated introduction to how populations change."
             },
             {
               kind: "Read",
               title: "Natural selection",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/natural-selection/",
-              note: "The museum page, if you want the same idea in their words."
+              note: "A more detailed explanation of the same ideas."
             }
           ]
         },
         talk: [
-          "A rabbit that runs faster than its siblings survives a fox. What else has to be true for the next generation of rabbits to be faster?",
-          "Why is a polar bear's coat not 'fit' in the abstract — only fit somewhere?"
+          "A rabbit that runs faster than its siblings escapes a fox. What else has to be true for the next generation of rabbits to run faster on average?",
+          "Why is a polar bear's thick fur an advantage in the Arctic but not in a desert?"
         ],
-        lights: "Natural selection is inherited differences meeting a world where some versions leave more offspring than others."
+        summary: "Natural selection happens when individuals differ, some differences are inherited, and some inherited differences lead to more offspring. The traits that lead to more offspring become more common."
       },
       {
-        id: "beetle-patch",
-        title: "The Beetle Patch",
-        tease: "Be the bird. Then switch the ground and watch the winner change.",
-        reviewLabel: "Yesterday",
+        id: "selection-simulation",
+        title: "Natural selection simulation",
+        tease: "A beetle population simulation that shows selection and a changing habitat.",
         review: [
-          "More young are born than can have young of their own. They differ, and some differences are inherited. The environment sorts them, with no one in charge. Fitness means more offspring there, not 'best' in general."
+          "Natural selection needs four things. More offspring are born than survive, individuals differ, some differences are inherited, and some differences lead to more offspring. Fitness means the number of offspring that survive to reproduce in a particular environment."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Tonight is mostly a game, and the game is the lesson. You are a bird that eats beetles. Some beetles are green, some are brown. On green leaves, one color is easier to see. You get six pecks a season. Then the beetles you missed have the babies.",
-              "Play at least four seasons before you switch anything. Notice which color is getting common, and that you never chose a favorite. You just tapped what you saw. A baby usually matches its parent. Once in a while a baby flips color. That flip is the mutation. Selection didn't invent it. Selection only pecks.",
-              "Then switch the ground, from leaves to dark soil, and keep the same beetles. Don't reset. The easy ones to see should change. If you play a few more seasons, the common color should start to follow. That is the entire idea of natural selection in one patch of screen: variation, inheritance, too few seats, and an environment that can change its mind."
+              "The simulation below models a beetle population. It starts with 16 beetles, 8 green and 8 brown, on green leaves. Brown beetles are easier to see on green leaves. You play the bird that eats them.",
+              "Click on a beetle to eat it. You can eat six beetles each season. Then press the button to let the survivors reproduce. Each baby has the same color as its parent, except that about one baby in twelve has the other color because of a mutation. A ring around a beetle marks a baby with a new color. Play at least four seasons and watch how many green and brown beetles there are.",
+              "Next, switch the habitat to dark soil without restarting, and play four more seasons. Green beetles are now easier to see and brown beetles are harder to see."
             ]
           },
+          { type: "h", text: "What the simulation shows" },
           {
-            type: "ask",
-            text: "If every beetle were the same color, and no mutation ever flipped one, could selection change the population? What would it be missing?"
+            type: "prose",
+            paragraphs: [
+              "The population changes because the beetles that are harder to see leave more offspring. No individual beetle changes color. What changes is the proportion of each color in the population from one generation to the next.",
+              "The direction of change depends on the environment. When the habitat changes, the beetles that are favored change too. Mutation matters as well. If every beetle were the same color and no mutations occurred, there would be no variation for selection to act on."
+            ]
           }
         ],
         activity: {
@@ -335,36 +317,47 @@
               title: "Natural Selection",
               source: "PhET · University of Colorado",
               url: "https://phet.colorado.edu/en/simulations/natural-selection",
-              note: "A bigger lab, for another time, with wolves and rabbits and a graph. It works in a browser on a tablet. Tonight's beetle patch is enough."
+              note: "A simulation of a rabbit population with mutations, predators, and limited food. It includes a graph of the population over time."
             }
           ]
         },
         talk: [
-          "When you switched the ground, did the beetles change color one by one, or did the mix of the group change?",
-          "What did the honey ring mean, and why does selection need those rare flips?"
+          "When the habitat changed, did individual beetles change color? What changed instead?",
+          "Why does natural selection need the rare mutations that produce new colors?"
         ],
-        lights: "Selection changes which inherited version is common. Change the place, and you can change which version that is."
+        summary: "Selection changes which inherited traits are common in a population. When the environment changes, the traits that are favored can change."
       },
       {
-        id: "moths-mice-medicine",
-        title: "Moths, Mice, and Medicine",
-        tease: "Three true stories where the sorting was fast enough to watch.",
-        reviewLabel: "Yesterday",
+        id: "selection-examples",
+        title: "Examples of natural selection",
+        tease: "Peppered moths, rock pocket mice, and antibiotic resistance.",
         review: [
-          "On the beetle patch, the bird ate what stood out. Babies mostly matched their parents, with a rare flip. Switch the ground, and a different color became the safe one. The individuals didn't recolor themselves. The group changed."
+          "In the beetle simulation, the beetles that were harder to see left more offspring. The proportion of colors changed over generations, and no individual beetle changed color. When the habitat changed, the favored color changed."
         ],
         body: [
+          { type: "h", text: "Peppered moths" },
           {
             type: "prose",
             paragraphs: [
-              "Peppered moths in England rest on tree trunks. In the early 1800s most were pale, speckled, and hard to see against lichen. A dark version was rare. Then coal soot killed the lichen and blackened the bark. Birds ate the moths they could see. Dark moths became the common ones. When the air was cleaned in the late 1900s, the trees lightened, and the pale moths came back. The moths did not decide to change. The ones that matched had more babies. Scientists tested this with real birds.",
-              "Rock pocket mice live in the southwestern United States. On pale sand, most have pale fur. On old lava flows, some only about a thousand years old, most have dark fur. Owls and other hunters find the mice that don't match. A dark mouse on dark rock is not a better mouse. It is a harder mouse to see, there. Researchers found something even better: on different lava flows, the dark fur came from mutations in different genes. Same result, more than one molecular path. Selection did not care which typo it was.",
-              "Bacteria and antibiotics are the story happening in hospitals. A person does not evolve resistance to a medicine. The bacterial population does. Most bacteria die. A rare one already had a variation that let it survive, often a protein that breaks the drug or pumps it out. That one divides. Soon the infection is made of its descendants. This is why a doctor says to finish the medicine: stopping early can leave the harder-to-kill bacteria still standing. The medicine didn't teach them a trick. It removed their neighbors."
+              "In England the peppered moth has a pale, speckled form and a dark form. Before the Industrial Revolution, almost all peppered moths were pale, which matched the lichen-covered bark of trees. In the 1800s, soot from coal-burning factories killed the lichen and darkened tree trunks in industrial areas. By the end of the century, nearly all of the moths near Manchester were dark. Birds ate the moths that were easier to see.",
+              "After air pollution laws were passed in the mid-1900s, the bark became lighter and the pale form became common again. Experiments in which researchers watched birds eat moths resting on tree trunks confirmed that birds ate more of the moths that did not match the bark."
             ]
           },
+          { type: "h", text: "Rock pocket mice" },
           {
-            type: "ask",
-            text: "In all three stories, name the sorter. Who or what was doing the pecking?"
+            type: "prose",
+            paragraphs: [
+              "Rock pocket mice live in the deserts of the southwestern United States and northern Mexico. Most live on light-colored sand and have light fur. In some areas the ground is covered with black rock from old lava flows, and the mice there mostly have dark fur. Owls and other predators catch more of the mice that do not match the ground. Some of these lava flows are only a few thousand years old.",
+              "Researchers including Michael Nachman and Hopi Hoekstra found that in one lava flow, dark fur is caused by mutations in a gene called Mc1r. On another lava flow, dark fur is caused by mutations in a different gene. The same trait evolved separately in different places because the same kind of selection was acting in each place."
+            ]
+          },
+          { type: "h", text: "Antibiotic resistance" },
+          {
+            type: "prose",
+            paragraphs: [
+              "When a person takes an antibiotic, it kills most of the bacteria causing the infection. A few bacteria may carry a mutation that lets them survive, such as a protein that breaks down the drug. Those bacteria reproduce, and the next generation is mostly resistant. The population of bacteria has evolved. The person has not.",
+              "Some bacteria, such as Escherichia coli, can divide every 20 to 30 minutes under good conditions, so a population goes through many generations in a day. Methicillin-resistant Staphylococcus aureus, known as MRSA, is a bacterium that has evolved resistance to many antibiotics. Using antibiotics when they are not needed increases the spread of resistant bacteria."
+            ]
           }
         ],
         activity: {
@@ -374,65 +367,75 @@
               title: "Natural Selection and the Rock Pocket Mouse",
               source: "HHMI BioInteractive",
               url: "https://www.biointeractive.org/classroom-resources/making-fittest-natural-selection-and-adaptation",
-              note: "About ten minutes. It can be the rest of tonight. The mice are trapped unharmed."
+              note: "A film on how selection acts on fur color in rock pocket mouse populations."
             },
             {
               kind: "Watch",
               title: "The same film on YouTube",
               source: "HHMI BioInteractive",
               url: "https://www.youtube.com/watch?v=sjeSEngKGrg",
-              note: "Use this if the HHMI page won't play. The sidebar suggestions are not part of the lesson."
+              note: "The same film, for when the HHMI page does not play."
             }
           ],
           quiz: [
             {
-              q: "In the peppered moth story, what actually changed over the years?",
+              q: "In the peppered moth example, what changed over the years?",
               choices: [
-                "Each moth turned darker when the trees got sooty.",
-                "Dark moths became more common, because birds ate fewer of them and they had more young.",
-                "The birds decided to stop eating moths."
+                "Each moth turned darker when the trees became covered in soot.",
+                "Dark moths became more common because birds ate fewer of them and they left more offspring.",
+                "The birds stopped eating moths."
               ],
               answer: 1,
-              why: "Individual moths don't recolor themselves to match. The mix of the population changes, because one inherited color leaves more offspring."
+              why: "Individual moths do not change color to match. The proportion of dark moths in the population changed because dark moths left more offspring."
             },
             {
-              q: "When an antibiotic stops working, what evolved?",
+              q: "When an antibiotic stops working against an infection, what has evolved?",
               choices: [
-                "The sick person, who got used to the medicine.",
-                "The bacterial population: rare survivors multiplied.",
-                "The antibiotic, which got weaker sitting in the bottle."
+                "The sick person, who became used to the medicine.",
+                "The population of bacteria, in which resistant survivors reproduced.",
+                "The antibiotic, which became weaker over time."
               ],
               answer: 1,
-              why: "The person is one body, and that body is not what selection is changing here. The bacteria are a population with inherited differences."
+              why: "A person's body is not what changed. The bacteria are a population with inherited differences, and the resistant ones left more offspring."
             }
           ]
         },
         talk: [
-          "Why is 'the same dark fur, from different genes' such a good clue that selection, not one accident, is at work?",
-          "What would you expect the peppered moths to do if the trees got sooty again?"
+          "Why is it strong evidence that dark fur in different mouse populations is caused by mutations in different genes?",
+          "What would you expect to happen to the peppered moths if the trees became covered in soot again?"
         ],
-        lights: "Selection can be fast when the sorter is harsh and the generation time is short. It still only sorts differences that already exist."
+        summary: "Selection can produce visible change within a few generations when predators or drugs remove many individuals and the species reproduces quickly. It acts only on differences that already exist."
       },
       {
-        id: "darwins-puzzle",
-        title: "Darwin's Puzzle",
-        tease: "People already knew they could shape pigeons and cabbages. Darwin asked what a mindless sorter could do with more time.",
-        reviewLabel: "Yesterday",
+        id: "darwin",
+        title: "Darwin and artificial selection",
+        tease: "How Darwin developed the theory of evolution by natural selection.",
         review: [
-          "Pale moths and dark moths traded places as the trees changed, because birds ate what they could see. Dark mice match dark lava, sometimes by different mutations. Antibiotics sort bacteria, not people."
+          "Peppered moths, rock pocket mice, and bacteria show selection at work. Dark moths became common when trees were dark with soot, dark mice match dark lava, and antibiotics leave behind resistant bacteria. In each case the proportion of an inherited trait changed in a population."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Charles Darwin was 22 when he boarded the HMS Beagle in 1831, as a naturalist's companion on a surveying voyage. He was gone five years. He collected everything: fossils, birds, plants, notes. In the Galápagos Islands, tortoises differed from island to island, and so did the birds. He did not instantly understand the finches. He had mixed up his labels, and an expert back in England, John Gould, told him the birds were a cluster of related species, not the mixed kinds Darwin had guessed. The idea grew after the voyage, not during a single heroic afternoon.",
-              "Darwin already knew artificial selection, because everyone who bred animals did. People choose which pigeons, dogs, or sheep get to have babies, and the breed changes. Wild mustard, one weedy plant, was bred into cabbage, kale, broccoli, cauliflower, and Brussels sprouts by people saving seeds from the plants that exaggerated one part: leaf, flower, or stem. The variation was already there. People were just the sorter.",
-              "His move was to drop the person. If pigeons change because a breeder keeps picking, populations can change because the world keeps picking, with no plan, given enough generations. He also argued something bigger: living things share ancestors. The differences are descended from earlier forms, not painted on from nothing. He called it descent with modification. He sat on the argument for years. In 1858 Wallace wrote him with nearly the same mechanism. They published short papers together. In 1859 Darwin's book, On the Origin of Species, laid the case out."
+              "Charles Darwin (1809 to 1882) was an English naturalist. In 1831, at the age of 22, he joined the ship HMS Beagle as a naturalist on a five-year survey voyage around the world. He collected fossils, plants, and animals and kept detailed notes. In the Galápagos Islands he noticed that tortoises and mockingbirds differed from island to island. He also collected finches, but he did not record which island each one came from. After he returned to England, the ornithologist John Gould identified the finches as a group of closely related species. Darwin developed his theory over the following two decades."
             ]
           },
+          { type: "h", text: "Artificial selection" },
           {
-            type: "ask",
-            text: "Broccoli and kale are the same species as wild mustard, shaped by farmers. What was the farmer doing that a drought, or a bird, can also do?"
+            type: "prose",
+            paragraphs: [
+              "Darwin was familiar with artificial selection, which is when people choose which animals or plants reproduce. Breeders had produced many varieties of pigeons, dogs, and cattle by choosing which individuals to breed over many generations. Darwin bred pigeons himself.",
+              "Many crops show the same process. Cabbage, kale, broccoli, cauliflower, and Brussels sprouts are all varieties of one species, Brassica oleracea, which grows wild on the coasts of Europe. Farmers selected plants with larger leaves to get cabbage and kale, larger flower clusters to get broccoli and cauliflower, and larger buds to get Brussels sprouts. All dogs descend from wolves, and dogs were domesticated more than 14,000 years ago.",
+              "Artificial selection works because individuals vary, the variation is inherited, and the breeder chooses which individuals reproduce. Darwin proposed that nature does the same thing without anyone making the choice. Individuals with traits that help them survive and reproduce leave more offspring."
+            ]
+          },
+          { type: "h", text: "The theory" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Darwin also proposed that all living things are related through common descent, which means that species descend from earlier species with modifications. He worked on his ideas for about twenty years before publishing them. In 1858, Alfred Russel Wallace, a naturalist working in Southeast Asia, sent Darwin a letter describing the same mechanism. Papers by both men were presented to the Linnean Society in London that year. Darwin's book On the Origin of Species was published in November 1859.",
+              "Darwin did not know about genes. Mendel's work on inheritance was published in 1866 but was not widely recognized until about 1900. The modern theory of evolution combines Darwin's ideas with genetics."
+            ]
           }
         ],
         activity: {
@@ -442,44 +445,57 @@
               title: "Artificial selection",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/artificial-selection/",
-              note: "Short. The pigeon and the cabbage, in their words."
+              note: "A short article on artificial selection in pigeons, dogs, and crops."
             },
             {
               kind: "Watch",
               title: "The Origin of Species: The Beak of the Finch",
               source: "HHMI BioInteractive",
               url: "https://www.biointeractive.org/classroom-resources/origin-species-beak-finch",
-              note: "Longer than a school night, closer to a quarter hour or more. Save it for a weekend. It is the real finches, measured year after year."
+              note: "A film about Peter and Rosemary Grant's long-term study of finches in the Galápagos."
             }
           ]
         },
         talk: [
-          "Why does it matter that Darwin didn't solve the finches in one glance on the beach?",
-          "What is the difference between artificial selection and natural selection — and what is the same?"
+          "How is artificial selection similar to natural selection, and how is it different?",
+          "Darwin did not know how traits are inherited. Which later discoveries filled that gap?"
         ],
-        lights: "Darwin's idea: populations change because some inherited versions leave more offspring, and today's species descend from earlier ones."
+        summary: "Darwin proposed that natural selection works like artificial selection, with the environment doing the choosing, and that species share common ancestors."
       },
       {
-        id: "how-old",
-        title: "How Old Is Old?",
-        tease: "A year for the whole planet. We show up after dinner on December 31.",
-        reviewLabel: "Yesterday",
+        id: "age-of-earth",
+        title: "How old is the Earth?",
+        tease: "How scientists date rocks and what the timeline of life looks like.",
         review: [
-          "Breeders change pigeons and cabbages by choosing who reproduces. Darwin argued that nature sorts too, with no breeder, and that living things share ancestors. The finch insight came after careful comparison, not in a flash on the beach."
+          "Darwin compared natural selection to artificial selection, where breeders choose which individuals reproduce. He also proposed that species share common ancestors. Alfred Russel Wallace came up with the same mechanism independently, and Darwin's book was published in 1859."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Selection needs generations. The obvious objection, in Darwin's time and sometimes now, is that there hasn't been enough time. There has. The Earth is about 4.5 billion years old. A billion is a thousand millions. If you counted one number a second, with no sleep, a million would take about eleven days. A billion would take about thirty-two years.",
-              "How anyone knows is a chemistry question you are ready for. Some atomic nuclei are unstable. A uranium nucleus can spit out pieces and, through a chain of decays, become lead. It does this at a steady average rate that doesn't care about weather, earthquakes, or being buried. Measure how much uranium is left in a mineral and how much lead of the right kind has appeared, and you have a clock. The oldest Earth minerals, and meteorites left over from the solar system's birth, agree on that 4.5 billion years. Life's oldest solid clues are at least 3.5 billion years old, and maybe older. For most of that time, life was microbial.",
-              "Fossils are mostly hard parts buried in sediment, where minerals slowly replace them, or the shape left behind. We will never have every page. Soft bodies often vanish. Erosion deletes chapters. We don't need every page to see the order. Tonight's widget is a calendar trick: the whole history of Earth squeezed into one year. Don't hunt for humans in January. We are not there."
+              "The Earth is about 4.54 billion years old. A billion is a thousand million. If you counted one number per second without stopping, you would reach one million in about 12 days and one billion in about 32 years. Counting to 4.54 billion would take about 144 years. Evolution takes many generations, and the history of the Earth provides that time."
+            ]
+          },
+          { type: "h", text: "Radiometric dating" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Scientists measure the age of rocks using radioactive isotopes. Some atoms have unstable nuclei that change into other elements at a fixed rate. Uranium-238 decays into lead-206 with a half-life of 4.47 billion years, which means that half of any amount of uranium-238 turns into lead in that time. Heat, pressure, and chemical reactions do not change this rate.",
+              "Zircon crystals take in uranium when they form but exclude lead, so any lead in a zircon came from decay. By measuring the ratio of uranium to lead in a zircon, scientists can calculate how long ago it formed. The oldest minerals found on Earth are zircons from Western Australia that are about 4.4 billion years old. The age of the Earth itself, 4.54 billion years, comes from lead in meteorites that formed along with the solar system. Clair Patterson first calculated it in 1956."
+            ]
+          },
+          { type: "h", text: "Layers and fossils" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Sedimentary rock forms in layers, and lower layers are usually older than upper layers. A fossil is the preserved remains or traces of an organism. Most fossils are hard parts such as bones and shells that were buried and slowly replaced by minerals. The oldest fossils of microorganisms are at least 3.5 billion years old. The earliest animal fossils are about 575 million years old. For most of Earth's history, living things were mostly single-celled.",
+              "The fossil record is incomplete. Most organisms never become fossils, and erosion has destroyed many rocks. Even so, the order of fossils in rock layers is consistent around the world."
             ]
           },
           {
             type: "aside",
-            title: "Birds, while you're in December",
-            text: "About 66 million years ago an asteroid ended the non-bird dinosaurs. Birds made it through. A bird is a dinosaur, the way a bat is a mammal. On the one-year calendar, that asteroid lands on December 26."
+            title: "Dinosaurs and birds",
+            text: "About 66 million years ago an asteroid struck what is now the Yucatán Peninsula in Mexico, and the non-bird dinosaurs went extinct. Birds descend from small feathered dinosaurs and survived. Birds are classified as dinosaurs."
           }
         ],
         activity: {
@@ -490,49 +506,45 @@
               title: "EarthViewer",
               source: "HHMI BioInteractive",
               url: "https://www.biointeractive.org/classroom-resources/earthviewer",
-              note: "A big, beautiful deep-time globe. Better on a larger screen, another day. The calendar on this page is the one for tonight."
+              note: "An interactive globe that shows how continents, climate, and life have changed over Earth's history. It works best on a larger screen."
             },
             {
               kind: "Read",
               title: "How we know what happened when",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/the-history-of-life-looking-at-the-patterns/how-we-know-what-happened-when/",
-              note: "The short version of rocks, fossils, and clocks."
+              note: "A short article on dating rocks and fossils."
             }
           ]
         },
         talk: [
-          "Why is a uranium nucleus a clock, when a puddle drying in the sun is not?",
-          "On the one-year calendar, what was Earth doing for most of the year?"
+          "Why can radioactive decay be used to measure time when heat and pressure do not change its rate?",
+          "On the one-year calendar, how much of the year passes before the first animals appear?"
         ],
-        lights: "Earth is about 4.5 billion years old, life is most of that history, and animals — let alone humans — are the last days of December."
+        summary: "The Earth is about 4.54 billion years old. Life has existed for at least 3.5 billion years, and animals appeared about 575 million years ago."
       },
       {
-        id: "reading-rocks",
-        title: "Reading the Rocks",
-        tease: "Scientists predicted a fish with wrists, then went and found one.",
-        reviewLabel: "Yesterday",
+        id: "fossils",
+        title: "Fossils",
+        tease: "What the order of fossils shows and how Tiktaalik was found.",
         review: [
-          "Unstable nuclei are clocks, and they put Earth's age near 4.5 billion years. Life shows up early and stays microbial for a very long time. If history were a year, animals arrive in November, and we arrive in the last hour of December 31."
+          "The Earth is about 4.54 billion years old, and radioactive isotopes such as uranium-238 are used to date rocks. Life has existed for at least 3.5 billion years. Animals appeared about 575 million years ago."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Layers of sedimentary rock are usually older underneath and younger on top, unless something has clearly flipped them. Fossils in those layers are not scattered at random. In the oldest rocks that contain animals, you do not find rabbits, or birds, or flowers. You find simpler animal bodies. Higher up, new groups appear. The order repeats on different continents. That is already a prediction machine: a fossil rabbit in a rock that is truly a billion years old, with no mix-up, would wreck the story. We don't find that.",
-              "The order also matches the family tree we get from bodies and from DNA. Things that share a more recent ancestor show up nearer each other in time. Missing pages are normal. A missing page is not a missing idea. You can see that a book is a novel even with a chapter torn out, if the chapters you have are in a consistent order.",
-              "In the 1990s, Neil Shubin, Ted Daeschler, and their team wanted a fossil from the time when fish with fleshy fins were giving rise to vertebrates with wrists and necks. They knew how old the rocks needed to be, about 375 million years, and what kind of place: an ancient river or delta, where a shallow-water animal could be buried. They looked for rocks of that age they could actually get to. That search took them to Ellesmere Island, in the Canadian Arctic. In 2004 they found Tiktaalik — say tik-TAH-lik."
+              "Fossils show the order in which groups of organisms appeared. The oldest rocks that contain animal fossils contain no mammals, birds, or flowering plants. Fish appear first among the vertebrates. Amphibians, reptiles, mammals, and birds appear later, in younger rocks. This order is the same on every continent. A fossil rabbit in a rock layer a billion years old would contradict it, and none has ever been found.",
+              "The fossil record also fits what scientists learn from comparing living species. Groups that are closely related, according to anatomy and DNA, tend to appear close together in time."
             ]
           },
-          {
-            type: "ask",
-            text: "Why is 'we predicted the age of the rock, then found the animal' stronger evidence than 'we found a strange fossil and made up a story afterward'?"
-          },
+          { type: "h", text: "Tiktaalik" },
           {
             type: "prose",
             paragraphs: [
-              "Tiktaalik has scales and fins, and also a neck, a flat head, and bones inside the fin that match an upper arm, a forearm, and a wrist. It is not 'the first land animal,' and it is not your grandmother frog. It may not even be a direct ancestor. It is a close cousin of that transition, which is what fossils usually are: relatives who show what the in-between could look like. Lobe-finned fishes are the group. Lungfish, living today, are nearer cousins to you than a goldfish is. You did not come from a salmon.",
-              "The move onto land was not a single heroic fish deciding to walk. It was a population, in shallow water, where being able to prop yourself up and gulp air was useful. Later nights will stay with that idea: features change job before they look 'finished.'"
+              "Scientists have used the fossil record to make predictions. Neil Shubin, Ted Daeschler, and Farish Jenkins wanted to find a fossil that showed the change from fish to four-legged animals. Fossils of fish about 385 million years old and of four-legged animals about 365 million years old were already known. The team predicted that an animal in between would be found in rocks about 375 million years old that had formed in ancient streams. They looked for places where rocks of that age and type are exposed at the surface, and they chose Ellesmere Island in northern Canada. In 2004 the team found fossils of Tiktaalik roseae.",
+              "Tiktaalik was between about 1 and 3 meters long and has features of both fish and four-legged animals. It has scales and fins like a fish. It also has a flat head with eyes on top, a neck that lets the head move separately from the body, and bones in the fin that correspond to the upper arm, forearm, and wrist bones of land vertebrates. It lived in shallow water and could probably prop itself up on its fins.",
+              "Tiktaalik is probably not a direct ancestor of land animals. It is a close relative of the group that gave rise to them, so it shows what animals in that transition looked like. Land vertebrates descend from lobe-finned fishes. Lungfish are a living group of lobe-finned fishes, and they are more closely related to humans than they are to salmon or goldfish."
             ]
           }
         ],
@@ -543,38 +555,45 @@
               title: "When Fish First Breathed Air",
               source: "PBS Eons",
               url: "https://www.pbs.org/video/when-fish-first-breathed-air-vmmn0b/",
-              note: "A short episode. Tiktaalik is the star. Fine to let the video carry the rest of tonight."
+              note: "A video about Tiktaalik and the move of vertebrates onto land."
             },
             {
               kind: "Watch",
               title: "The same episode on YouTube",
               source: "PBS Eons",
               url: "https://www.youtube.com/watch?v=E1h4kgt2520",
-              note: "If the PBS player won't start. Ignore the suggested videos afterward."
+              note: "The same video, for when the PBS player does not work."
             }
           ]
         },
         talk: [
-          "What would Tiktaalik have looked like if it had been a goldfish with legs glued on? What did it actually have?",
-          "Why do scientists love a fossil that was predicted before it was found?"
+          "Why is a fossil found in a predicted place stronger evidence than a fossil found by chance and explained afterward?",
+          "Which features of Tiktaalik resemble a fish, and which resemble a four-legged animal?"
         ],
-        lights: "The rocks are in a consistent order, and Tiktaalik is a wristed fish from the exact age where a wristed fish had to be."
+        summary: "Fossils appear in the same order around the world. Tiktaalik was found in rocks of the age and type where scientists predicted a fish with limb-like fins would be."
       },
       {
-        id: "walking-whales",
-        title: "Whales That Walked",
-        tease: "If whales came from land mammals, early whales should have legs. They do.",
-        reviewLabel: "Yesterday",
+        id: "whale-evolution",
+        title: "Whale evolution",
+        tease: "How fossils and DNA show that whales descend from land mammals.",
         review: [
-          "Fossils are not random, and the order in the rocks matches the family tree. Tiktaalik was predicted from the age of the rocks: a fish with a neck and a wrist. It is a cousin of the transition to land, not a modern fish and not a frog."
+          "Fossils appear in the same order on every continent. Neil Shubin and his team predicted the age and kind of rock in which a transitional fossil would be found, and they found Tiktaalik there in 2004. Tiktaalik had fish features and also a neck and wrist-like bones in its fins."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Whales and dolphins are mammals. They make milk, they are warm-blooded, and they breathe air. Their closest living relatives are hippos. That is a weird sentence until you hear the rest, and it came from comparing DNA, then lined up with bones.",
-              "If whales descend from hoofed land mammals, then rocks of the right age should hold animals that are in between: whale-like ears or teeth, and still four legs. Those fossils turned up, mostly in Pakistan and India, in rocks about 50 million years old. Pakicetus — say pack-ih-SEE-tus — still looked like a long-legged animal that lived by fresh water. Ambulocetus — am-byoo-low-SEE-tus — means 'walking swimming whale.' It could do both, badly by later standards, and well enough for a river delta. Later whales have a blowhole, flippers, and tiny hip bones still sitting inside the body where legs used to attach. Those hip bones are not a decoration. They are leftovers of a skeleton that used to hold up weight.",
-              "The video is five minutes, and it tells this better than a paragraph can, including a cat-sized relative called Indohyus with a thickened ear bone otherwise known from whales. Watch it together. The thing to listen for is not a list of names. It is the prediction: legs should be there, and legs are there."
+              "Whales, dolphins, and porpoises are mammals. They breathe air, are warm-blooded, give birth to live young, and nurse their young with milk. Comparisons of DNA show that the closest living relatives of whales are hippopotamuses. Whales and hippos belong to a larger group that also includes cattle and pigs. This suggested that whales descend from four-legged land mammals.",
+              "If that is correct, fossils of early whales should show four legs and a mixture of land and water features. Such fossils have been found, mostly in Pakistan and India, in rocks that are 40 to 50 million years old."
+            ]
+          },
+          { type: "h", text: "The fossil sequence" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Indohyus was a hoofed animal about the size of a raccoon that lived in India about 48 million years ago. It has the same thickened ear bone that is otherwise found only in whales, and it is more closely related to whales than any other hoofed animal is. It lived near water.",
+              "Pakicetus, about 50 million years old, was about the size of a wolf. It had long legs and lived near fresh water. Its skull has the whale ear structure. Ambulocetus, about 49 million years old, was about 3 meters long. Its name means 'walking whale'. It had short legs with large feet and probably swam by moving its body up and down. Rodhocetus, about 47 million years old, had small hind limbs and spent most of its time in the sea. Basilosaurus, about 40 million years old, was a fully aquatic whale up to about 18 meters long, and it still had tiny hind legs.",
+              "Modern whales have a blowhole on top of the head, flippers, and a tail fluke. They also have small hip bones inside the body that are not attached to the spine. These bones are the remains of the pelvis and hind legs of ancestors that walked."
             ]
           }
         ],
@@ -583,45 +602,55 @@
             {
               kind: "Watch",
               title: "When Whales Walked",
-              source: "PBS Eons · about 5 minutes",
+              source: "PBS Eons",
               url: "https://www.pbs.org/video/when-whales-walked-jjfimk/",
-              note: "This is the night's main event. Five minutes, closed captions, no gore."
+              note: "A video about the fossils that show how whales evolved from land mammals."
             },
             {
               kind: "Watch",
               title: "The same episode on YouTube",
               source: "PBS Eons",
               url: "https://www.youtube.com/watch?v=_OSRKtT_9vw",
-              note: "Same film, if PBS won't play. The channel's other suggestions can wait."
+              note: "The same video, for when the PBS player does not work."
             }
           ]
         },
         talk: [
-          "What did scientists expect to find, before they found walking whales, and why?",
-          "Hippos are the closest living relatives of whales. Does that mean whales turned into hippos, or hippos turned into whales, or something else?"
+          "What did scientists expect to find in the fossil record if whales descended from land mammals?",
+          "Hippos are the closest living relatives of whales. Does that mean whales descended from hippos? Explain."
         ],
-        lights: "Whales are mammals whose ancestors walked. The fossils have legs, which is what common ancestry predicted."
+        summary: "Whales are mammals that descend from land mammals. Fossils such as Pakicetus and Ambulocetus have legs, and modern whales still have hip bones."
       },
       {
-        id: "same-bones",
-        title: "Same Bones, Different Jobs",
-        tease: "Your arm, a bat wing, a whale flipper, and a horse's leg are the same map.",
-        reviewLabel: "Yesterday",
+        id: "homologous-structures",
+        title: "Homologous structures",
+        tease: "Why different animals share the same bones, and what vestigial structures show.",
         review: [
-          "Whales are mammals. DNA puts hippos nearest them. Fossils of early whales have four legs, including Ambulocetus, the walking swimming whale, and modern whales still have tiny hip bones where the legs attached."
+          "Whales are mammals, and DNA shows that hippos are their closest living relatives. Early whale fossils such as Pakicetus and Ambulocetus had four legs. Modern whales have small hip bones that remain from their walking ancestors."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Hold your arm out. One long bone near the shoulder. Two bones in the forearm. A cluster of small wrist bones. Then fingers. A bat's wing has that same map, with the fingers stretched long and skin between them. A whale's flipper has it, shortened into a paddle. A horse's front leg has it too, though the horse stands on a single long digit and the side digits are reduced. The activity lights the map up.",
-              "That match is a homology: a similarity because of shared inheritance, not because the job demands it. An engineer designing a flipper, a wing, and a hand from scratch would not be forced to use one bone, then two, then a pile of pebbles, then digits, every time. A wing can be built other ways. An insect wing is. Insect wings and bird wings both fly, but the structure is different. That kind of match, same job and different structure, is an analogy. Bird wings and bat wings are homologous as arms, and analogous as wings: the arm is inherited, the flying was invented twice.",
-              "Some parts are leftovers with a smaller job, or almost none. Whale hips. The little muscles that give you goosebumps, which in a furry ancestor would have puffed the coat up for warmth or a threat. A tailbone. 'Leftover' does not always mean 'useless.' The appendix in humans seems to have an immune job, and it is still a reduced version of a larger pouch in leaf-eating relatives. History shows in the body as much as it shows in the rocks."
+              "Compare the bones in a human arm, a bat's wing, a whale's flipper, and a horse's front leg. Each has one upper bone, two bones in the forearm, a group of small wrist bones, and digits. The bones are in the same order in all four, even though the limbs are used for different things: grasping, flying, swimming, and running. Structures that are similar because they were inherited from a common ancestor are called homologous structures.",
+              "Common ancestry explains the pattern. An ancestor of these mammals had a limb with this arrangement of bones, and its descendants modified it. In the bat, the digits became very long and support a wing of skin. In the horse, the animal stands on a single long digit, and the other digits are reduced to small splint bones."
             ]
           },
+          { type: "h", text: "Analogous structures" },
           {
-            type: "ask",
-            text: "A shark and a dolphin both have a sleek shape and a fin on the back. Is that more likely a homology or an analogy? What would you need to know?"
+            type: "prose",
+            paragraphs: [
+              "Structures that have a similar function but did not come from a common structure are called analogous structures. Insect wings and bird wings are both used for flight, but they are built differently. An insect wing is a flap of the outer skeleton and contains no bones.",
+              "Bird wings and bat wings are homologous as forelimbs, because both contain the arm bones inherited from a common ancestor. They are analogous as wings, because flight evolved separately in birds and bats and the wing structures differ. A bird's wing is covered with feathers, and a bat's wing is skin stretched between long fingers."
+            ]
+          },
+          { type: "h", text: "Vestigial structures" },
+          {
+            type: "prose",
+            paragraphs: [
+              "A vestigial structure is a body part that has lost most or all of its original function. Whale hip bones are an example. The human tailbone is the remains of a tail. Humans have tiny muscles at the base of each hair that cause goosebumps. In furry mammals the same muscles fluff up the fur to trap heat. Boas and pythons have small hip and leg bones.",
+              "A vestigial structure can still have some use. The human appendix appears to play a role in the immune system, but it is a small version of the large cecum found in many plant-eating mammals."
+            ]
           }
         ],
         activity: {
@@ -632,36 +661,45 @@
               title: "Homologies and analogies",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/the-history-of-life-looking-at-the-patterns/homologies-and-analogies/",
-              note: "Short. The same distinction, with pictures."
+              note: "A short article with diagrams of homologous and analogous structures."
             }
           ]
         },
         talk: [
-          "Why is a weird shared detail better evidence of ancestry than a shared job, like 'both of these fly'?",
-          "Name a part of your body that looks like a hand-me-down."
+          "A shark and a dolphin both have a streamlined body and a fin on the back. Are these structures more likely to be homologous or analogous? What would you need to know to decide?",
+          "Why is a shared structure such as the arm bone pattern better evidence of ancestry than a shared function such as flying?"
         ],
-        lights: "Homology is the same bones because of a shared ancestor. Analogy is the same job, solved more than once."
+        summary: "Homologous structures are similar because they were inherited from a common ancestor. Analogous structures have a similar function but evolved separately."
       },
       {
-        id: "family-album",
-        title: "The Family Album in Your Cells",
-        tease: "The same code, the same typos, and a fused chromosome with the seam still showing.",
-        reviewLabel: "Yesterday",
+        id: "genetic-evidence",
+        title: "Genetic evidence",
+        tease: "What DNA comparisons show about common ancestry.",
         review: [
-          "Arms, bat wings, whale flippers, and horse legs share one bone, then two, then wrist bones, then digits. That map is inheritance. Insect wings fly without that map, so the flying is an analogy. Leftover parts are history you can touch."
+          "Human arms, bat wings, whale flippers, and horse legs have the same bones in the same order. Homologous structures come from a common ancestor. Analogous structures, such as insect and bird wings, have the same function but different origins."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "The genetic code is the same in you and in an oak tree. A codon that means a certain amino acid in your cells means that amino acid in a bacterium. That is exactly what you would expect if the code were inherited from one ancestor, and a surprise if life had been built from scratch many separate times. The chemistry didn't have to be this unified. It is.",
-              "Line up comparable stretches of DNA and humans and chimpanzees match about 98 to 99 percent of the letters. The exact number depends on what you count, so don't treat 98.7 as a magic score. We match less with mice, less still with fish, less still with mushrooms. The order is the same order the fossils suggest. It is not a ladder from 'low' to 'high.' It is a set of nested groups: a group inside a group inside a group.",
-              "Two details are especially hard to explain any other way. Other great apes have 24 pairs of chromosomes. Humans have 23. Our chromosome 2 looks like two ape chromosomes fused end to end. In the middle, where the join would be, there are leftover telomeres — the caps that normally only belong on the ends — and the scar of a second centromere. That is a seam. And some old viruses pasted themselves into the DNA of a sperm or egg cell, at essentially random addresses, and got stuck there forever. Humans and apes share some of those pasted-in viruses at the same address. A virus doesn't aim for the same spot in two species. A shared address means the paste happened once, in a shared ancestor."
+              "All living things use the same genetic code. The same codons specify the same amino acids in bacteria, plants, and humans, with a few small exceptions. The code could have been different in different groups of organisms. Its being the same is what would be expected if all life descends from one common ancestor.",
+              "Comparing DNA sequences shows how closely related species are. Human and chimpanzee DNA are about 98 to 99 percent identical in the parts that can be aligned, and the exact figure depends on how the comparison is made. Humans are less similar to mice, less similar still to fish, and less similar again to plants and bacteria. The relationships found with DNA match the relationships found from anatomy and from the fossil record."
             ]
           },
+          { type: "h", text: "Human chromosome 2" },
           {
-            type: "ask",
-            text: "If humans and chimps were built separately, why would both of them have the same broken virus sitting in the same place in the recipe?"
+            type: "prose",
+            paragraphs: [
+              "Humans have 23 pairs of chromosomes. Chimpanzees, gorillas, and orangutans have 24 pairs. Human chromosome 2 matches two separate chromosomes of the other apes joined end to end. In the middle of human chromosome 2 are the remains of telomeres, the sequences that normally cap the ends of chromosomes, and the remains of a second centromere. A fusion of two chromosomes in an ancestor explains why these sequences are found in the middle."
+            ]
+          },
+          { type: "h", text: "Viral DNA in the genome" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Some viruses, called retroviruses, insert their DNA into the DNA of the cells they infect. If this happens in a cell that makes eggs or sperm, the viral DNA is inherited by the offspring. About 8 percent of the human genome consists of sequences from retroviruses.",
+              "Humans and chimpanzees share many of these insertions at the same locations in the genome. A virus inserts at more or less random locations, so the same insertion at the same location in two species is best explained by a single insertion in a common ancestor."
+            ]
           }
         ],
         activity: {
@@ -671,44 +709,52 @@
               title: "The 4 Types of DNA and Molecular Genealogy",
               source: "Learn.Genetics · University of Utah",
               url: "https://learn.genetics.utah.edu/content/basics/molgen/",
-              note: "How DNA is used as a family record. Readable, and fine for a phone."
+              note: "An overview of how DNA is used to trace family relationships."
             },
             {
               kind: "Read",
               title: "Genetics evidence for human evolution",
               source: "Smithsonian Human Origins",
               url: "https://humanorigins.si.edu/evidence/genetics",
-              note: "The Smithsonian's own page. Chromosomes, shared DNA, and what it does and doesn't say."
+              note: "A summary of the genetic evidence, including chromosome 2 and shared DNA."
             }
           ]
         },
         talk: [
-          "Why is a shared 'seam' or a shared virus scar better evidence than a feature that is useful to both species?",
-          "Does matching DNA mean humans evolved from chimpanzees? What does it mean instead?"
+          "Why is a shared chromosome fusion or a shared viral insertion better evidence of ancestry than a trait that is useful to both species?",
+          "Does the similarity of human and chimpanzee DNA mean that humans evolved from chimpanzees? What does it mean?"
         ],
-        lights: "DNA is a family album: one shared code, nested similarities, a fused chromosome, and virus scars at the same addresses."
+        summary: "All life shares one genetic code. DNA similarities, the fused human chromosome 2, and shared viral insertions all point to common ancestry."
       },
       {
-        id: "two-branches",
-        title: "When One Branch Becomes Two",
-        tease: "A species is a population that shares a gene pool. Split the pool, and two stories start.",
-        reviewLabel: "Yesterday",
+        id: "speciation",
+        title: "Speciation",
+        tease: "How one species becomes two, with Darwin's finches as an example.",
         review: [
-          "The genetic code is shared across life. Comparable DNA puts chimps nearest us, then other apes, then the rest in the same order as the fossils. Chromosome 2 is two ape chromosomes fused, seam still visible. Shared virus scars sit at the same addresses."
+          "All life uses the same genetic code. Human DNA is most similar to chimpanzee DNA, and then to the DNA of other species in the order that anatomy and fossils suggest. Human chromosome 2 is a fusion of two ape chromosomes, and humans and chimpanzees share viral insertions at the same locations."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "For animals, a useful way to say 'species' is: a group that actually shares a gene pool. They breed together, and their young can breed. The edges are fuzzy, and bacteria don't fit this definition well, because they trade DNA differently. Fuzzy edges don't make the idea useless. Day and night are fuzzy at dusk, and they are still real.",
-              "Speciation is what happens when one pool becomes two. Often the split starts with geography. A river, a mountain, an ocean, an island. The two groups keep getting mutations. Selection can push them in different directions if the places differ. Drift nudges small groups too. If they meet again much later and don't successfully have young, you have two species. Sometimes they never meet again and just keep diverging. A new species is not one baby born a different kind of animal. It is a population story, and it is usually slow.",
-              "Darwin's finches are the classic island version. Ancestors from the South American mainland reached the Galápagos, somewhere around two or three million years ago. Islands isolated groups. Beaks diverged with the food: deep beaks for hard seeds, slender beaks for insects. There are more than a dozen species now. Peter and Rosemary Grant measured medium ground finches on one tiny island for decades. In a drought, the plants that made small soft seeds died back, deep-beaked birds survived better, and the next generation's beaks were deeper on average. Wet years pushed back. Selection you can put on a graph, inside a human career.",
-              "If the two groups start mixing again and having young, differences can wash back together. That mixing is gene flow. Speciation sticks when gene flow stays rare enough that the two stories no longer rejoin."
+              "A species is often defined as a group of organisms that can breed with each other and produce fertile offspring. This definition works well for most animals. It does not work well for bacteria, which mostly reproduce by dividing, or for fossils, where breeding cannot be tested. Biologists use several different definitions of species for this reason."
             ]
           },
+          { type: "h", text: "How new species form" },
           {
-            type: "ask",
-            text: "Two groups of birds look a little different, but they still have healthy chicks together whenever they meet. One species or two? What else would you want to know?"
+            type: "prose",
+            paragraphs: [
+              "Speciation is the formation of a new species. It usually begins when a population is divided and the two parts stop exchanging genes. Geography is a common cause. A river, a mountain range, or an ocean can separate the groups. Gene flow is the movement of alleles between populations through breeding. When gene flow stops, mutations build up separately in each population, selection acts differently if the environments differ, and genetic drift acts separately on each one.",
+              "After many generations the two populations may be so different that they can no longer interbreed. At that point they are separate species. If the populations meet again before they have diverged enough, they interbreed and the differences can disappear. Speciation happens in populations over many generations. A single animal does not give birth to a new species."
+            ]
+          },
+          { type: "h", text: "Darwin's finches" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Darwin's finches live on the Galápagos Islands. They descend from a species of finch that arrived from South America about 2 to 3 million years ago. The finches spread to different islands and diversified into about 15 species with different beaks. Species with large, deep beaks crush hard seeds, and species with narrow beaks eat insects. The woodpecker finch uses cactus spines to dig insects out of wood.",
+              "Peter and Rosemary Grant, biologists from Princeton University, have studied finches on the small island of Daphne Major since 1973. In 1977 a drought killed most of the plants that produce small, soft seeds, and mostly large, hard seeds were left. About 85 percent of the medium ground finches on the island died. Birds with deeper beaks could crack the hard seeds and were more likely to survive. The next generation had beaks that were about 4 percent deeper on average."
+            ]
           }
         ],
         activity: {
@@ -718,49 +764,44 @@
               title: "Defining a species",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/speciation/defining-a-species/",
-              note: "Short and plain. The fuzzy edges are included, which is the honest part."
+              note: "A short article on the different ways biologists define a species."
             },
             {
               kind: "Read",
               title: "Causes of speciation",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/speciation/causes-of-speciation/",
-              note: "Why a split stays split. Pairs well with the finch film from the Darwin night, if you saved it."
+              note: "An article on how populations become separate species."
             }
           ]
         },
         talk: [
-          "Why doesn't one animal give birth to a brand-new species?",
-          "What would gene flow do to two groups that had started to become different?"
+          "Why does one animal not give birth to a new species?",
+          "What would happen to two populations that had started to diverge if gene flow between them started again?"
         ],
-        lights: "A species split is a population that stops sharing genes long enough for two separate stories to take hold."
+        summary: "A new species forms when populations stop exchanging genes for long enough that they diverge. The Galápagos finches are an example."
       },
       {
-        id: "nobody-in-charge",
-        title: "Nobody Is in Charge",
-        tease: "Eyes, a ridiculous nerve, and a blind spot. Good enough to have babies beats perfect.",
-        reviewLabel: "Yesterday",
+        id: "eye-evolution",
+        title: "Evolution of the eye",
+        tease: "How eyes evolved in stages, and what imperfect structures show.",
         review: [
-          "Speciation is a gene pool splitting, often after a geographic separation. Finches on the Galápagos did this, and the Grants watched beak size shift in a drought within a few generations. Gene flow can still remix two groups if they start having young together again."
+          "A species is a group that breeds together and produces fertile offspring. Speciation usually starts when a population is divided and gene flow stops. Darwin's finches diversified on the Galápagos Islands, and the Grants measured beak size change in a drought."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Selection has no sketchbook. It cannot save a half-finished feature because the finished one would be nice later. Every generation has to work. That sounds like a limit. It is also the answer to 'what good is half an eye?'",
-              "A patch of cells that can tell light from dark is already useful: day versus night, shadow versus sun. A cup of those cells gives you direction. A smaller opening, like a pinhole, gives a dim picture. A lens brightens and sharpens it. Each of those stages helps, and animals alive today still use the earlier stages. Eyes evolved more than once. A vertebrate eye and an octopus eye both have a lens, and they were not inherited from a lens-eyed ancestor. The octopus version is wired more 'sensibly.' Ours has a blind spot, because the nerve fibers run in front of the light sensors and have to dive through them to get out. History, not a clean blueprint.",
-              "There is a nerve to your voice box that, in a fish, takes a short loop past the heart. In you it still loops down into the chest and back up. In a giraffe that detour is several meters, down the neck and back. Nobody designed a giraffe that way. The route was inherited from ancestors who barely had a neck, and lengthening the neck didn't reroute the wire. Selection doesn't get to start over. It edits."
+              "Some people ask what use half an eye would be. Eyes can work in stages, and each stage is useful. Some single-celled organisms have a light-sensitive spot that detects whether it is light or dark. Flatworms have a cup of light-sensitive cells that detects the direction of the light. The chambered nautilus has a pinhole eye, which is an open cup with a small opening that forms a dim image without a lens. Squid, octopuses, fish, and humans have a lens that focuses light to form a sharp image. All of these kinds of eye exist in living animals, and each one gives an advantage over having a simpler eye.",
+              "Eyes evolved many times independently. Vertebrate eyes and octopus eyes both have a lens and a retina, but they evolved separately and differ in design. In the vertebrate eye, the nerve fibers from the light-detecting cells run across the front of the retina and pass through it at one place to reach the brain. There are no light-detecting cells at that place, which creates a blind spot. In the octopus eye, the nerve fibers run behind the retina, so there is no blind spot."
             ]
           },
-          {
-            type: "ask",
-            text: "If a mutation made a slightly better eye, but the animal died with no young, does the population get that eye? Who has to survive the edit?"
-          },
+          { type: "h", text: "Limits of natural selection" },
           {
             type: "prose",
             paragraphs: [
-              "This is also why bodies are full of tradeoffs. Upright walking frees the hands and makes childbirth harder and backs achy. A peacock's tail is a handicap that works as an advertisement. 'Good enough to have babies in that place' beats 'perfect' every time, because perfect was never one of the options on the table. The options were whatever mutations and shuffles happened to produce, in bodies that still had to live.",
-              "Try the blind spot before the lamp goes out. It is a small, friendly proof that you are carrying history in your head."
+              "Natural selection modifies structures that already exist. It cannot redesign an organism from scratch. The recurrent laryngeal nerve connects the brain to the voice box. In fish, the corresponding nerve runs directly from the brain to the gills. In mammals the neck lengthened and the heart moved down into the chest, and the nerve was carried along with it. It now loops under a major artery near the heart before running back up to the voice box. In a giraffe this route is several meters long, even though the voice box is only a short distance from the brain.",
+              "Traits often involve tradeoffs. Walking upright frees the hands, but it makes childbirth more difficult and puts strain on the lower back. Natural selection favors traits that help survival and reproduction in the environment at the time. It does not produce an ideal design."
             ]
           }
         ],
@@ -772,32 +813,43 @@
               title: "Misconceptions about natural selection",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/misconceptions-about-natural-selection/",
-              note: "The page to open if someone says evolution has a goal, or that it makes organisms 'better' in general."
+              note: "An article on common misunderstandings, such as the idea that evolution has a goal."
             }
           ]
         },
         talk: [
-          "Why is 'what good is half an eye?' not the problem it sounds like?",
-          "The giraffe nerve is a bad route. Why doesn't selection just fix it?"
+          "Why is a partly developed eye still useful?",
+          "The laryngeal nerve of a giraffe takes a very long route. Why does natural selection not shorten it?"
         ],
-        lights: "Evolution edits what already exists. It has no plan, and good enough to reproduce beats perfect."
+        summary: "Eyes evolved in useful stages, and more than once. Natural selection modifies what already exists, so organisms have imperfect features such as the blind spot."
       },
       {
-        id: "family-tree",
-        title: "The Whole Family Tree",
-        tease: "Three great branches. You are on one late twig, with bacterial roommates inside your cells.",
-        reviewLabel: "Yesterday",
+        id: "tree-of-life",
+        title: "The tree of life",
+        tease: "How all living things are related and how the major groups are arranged.",
         review: [
-          "Selection has no goal and no sketch. Eyes can evolve in useful stages, and they did more than once. Your blind spot, and the nerve that loops through a giraffe's neck, are history that was never redesigned from scratch."
+          "Eyes evolved in stages that were each useful. Vertebrate and octopus eyes evolved separately. Natural selection modifies existing structures, which explains the blind spot and the long path of the giraffe's laryngeal nerve."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Every living thing we've been able to put on a family tree falls on three great branches: Bacteria, Archaea, and Eukarya. You are a eukaryote. Your cells have a nucleus. Archaea — ar-KEE-uh — are not a kind of bacteria. They are their own branch, and eukaryotes are closer relatives of archaea than of bacteria.",
-              "Inside your cells are mitochondria, the little compartments that handle energy. They have their own DNA, a circle, more like a bacterium's than like yours. The best reading of the evidence is that they were free-living bacteria, taken in by an ancestor of eukaryotes and never digested. Plants later did it again with a bacterium that could photosynthesize. That one became the chloroplast. You are not a single lineage in the way a diagram sometimes pretends. You are a cell with ancient roommates.",
-              "The last universal common ancestor, LUCA, is the most recent organism that all current life descends from. LUCA was already a cell, with DNA and ribosomes and the shared code. LUCA was not the first life. Earlier cells and earlier chemistry are mostly invisible to us. After LUCA, the tree is microbial for an enormously long time. Animals are a late twig inside eukaryotes. Fungi are closer to animals than plants are. A mushroom is more your cousin than a daisy is.",
-              "Open the tree and ask it where you are. Notice what the picture refuses to be. It is not a ladder with bacteria at the bottom and a human at the top. Every branch tip has been evolving for the same amount of time since the split. Bacteria are not unfinished people. They are extraordinarily good at being bacteria."
+              "Biologists group all living things into three domains: Bacteria, Archaea, and Eukarya. Bacteria and Archaea are single-celled organisms without a nucleus. Eukarya includes all organisms whose cells have a nucleus, such as animals, plants, fungi, and single-celled organisms like amoebas. Humans belong to Eukarya. Archaea are not a type of bacteria. They are a separate group, and eukaryotes are more closely related to archaea than to bacteria."
+            ]
+          },
+          { type: "h", text: "Mitochondria and chloroplasts" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Mitochondria are the parts of eukaryotic cells that release energy from food. They have their own small, circular DNA, similar to bacterial DNA, and they reproduce by dividing. The evidence indicates that mitochondria descend from bacteria that were taken in by an ancestor of eukaryotic cells about 2 billion years ago and then lived inside it. Chloroplasts in plants and algae descend from photosynthetic bacteria in the same way. This idea is called endosymbiosis. Lynn Margulis proposed it in 1967."
+            ]
+          },
+          { type: "h", text: "The last universal common ancestor" },
+          {
+            type: "prose",
+            paragraphs: [
+              "All living things share a common ancestor, called LUCA, the last universal common ancestor. It lived at least 3.5 billion years ago. LUCA was already a cell with DNA, RNA, ribosomes, and the genetic code, so it was not the first form of life. Earlier forms of life left no direct evidence.",
+              "The tree of life shows lines of descent. It is not a ladder from simple to complex organisms. Every living species has had the same amount of time to evolve since its lineage split from the others. Bacteria living today are not primitive versions of other organisms, and humans are not more evolved than bacteria. Most animal species are invertebrates, which are animals without a backbone. Fungi are more closely related to animals than plants are."
             ]
           }
         ],
@@ -809,44 +861,53 @@
               title: "Trees, not ladders",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/the-history-of-life-looking-at-the-patterns/trees-not-ladders/",
-              note: "The single most useful page if the 'march of progress' picture is stuck in your head."
+              note: "An article on why evolutionary relationships are drawn as trees and not as ladders."
             },
             {
               kind: "Read",
               title: "The family tree",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/the-history-of-life-looking-at-the-patterns/the-family-tree/",
-              note: "A companion page: how biologists draw the relationships."
+              note: "An article on how biologists draw and read evolutionary trees."
             }
           ]
         },
         talk: [
-          "Why is a mushroom a closer cousin to you than a daisy is? What would 'closer' mean on a tree?",
-          "Was LUCA the first living thing? What was LUCA, then?"
+          "Why are fungi more closely related to animals than plants are? What does 'more closely related' mean on a tree?",
+          "Was LUCA the first living thing? What was it?"
         ],
-        lights: "Life is a tree with three great branches. You are a late eukaryotic twig, and your cells still carry bacterial roommates."
+        summary: "All life descends from a common ancestor and falls into three domains. The tree of life is a branching tree, not a ladder, and humans are one branch among many."
       },
       {
-        id: "human-twig",
-        title: "The Human Twig",
-        tease: "We are apes. Chimps are cousins, not grandparents. Several human relatives were alive at once.",
-        reviewLabel: "Yesterday",
+        id: "human-evolution",
+        title: "Human evolution",
+        tease: "What fossils and DNA show about the origin of our species.",
         review: [
-          "Bacteria, Archaea, and Eukarya are the three great branches. Mitochondria were bacteria. LUCA was already a real cell, not the first spark. The tree is not a ladder, and a mushroom is closer to you than a daisy is."
+          "Living things fall into three domains: Bacteria, Archaea, and Eukarya. Mitochondria descend from bacteria that lived inside an ancestor of eukaryotic cells. The tree of life branches, and no living species is more evolved than another."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "Humans are apes. Our closest living relatives are chimpanzees and bonobos. We did not evolve from them. The shared ancestor lived something like six to seven million years ago, and both lines have been changing ever since. A chimp is a modern animal, exactly as modern as you are. The picture of an ape slowly standing up until it becomes a man in a suit is a cartoon of a ladder. The evidence is a bush.",
-              "Walking on two legs came before the big brain. Australopithecus afarensis — aw-stral-oh-PITH-uh-kus — includes the fossil nicknamed Lucy, about 3.2 million years old, from Ethiopia. She walked upright. Her brain was not much bigger than an ape's of her size. Our species, Homo sapiens, is at least about 300,000 years old, from fossils in Africa, including finds at Jebel Irhoud in Morocco. We arose in Africa. We are one species.",
-              "For a long time we were not the only human branch. Neanderthals lived in Europe and western Asia. Denisovans lived in Asia. We overlapped them in time. Many people whose ancestors lived outside Africa carry about one to two percent Neanderthal DNA, a souvenir of meeting, not a rank. People whose recent ancestors all lived in sub-Saharan Africa mostly do not. Nobody is more human because of that souvenir.",
-              "Skin color is melanin, a pigment, in different amounts. More melanin protects folate, a vitamin, from strong sun. Less melanin lets more ultraviolet through, which helps make vitamin D where sunlight is weak. It is a local adaptation, it is recent on the calendar you saw, and it is a gradient, not a set of separate kinds. It is not a ranking. Recent evolution in our species also includes lactase persistence — the ability to digest milk sugar as an adult — in several places where people kept dairy animals, and changes that help with thin air in some high-altitude populations. Culture is powerful, and culture is not the same thing as a gene changing. We did not stop evolving because we invented tools. Tools change which traits matter. They don't repeal inheritance."
+              "Humans belong to the group of apes, which also includes chimpanzees, bonobos, gorillas, orangutans, and gibbons. Chimpanzees and bonobos are our closest living relatives. Humans and chimpanzees share a common ancestor that lived about 6 to 7 million years ago. Humans did not evolve from chimpanzees. Both lineages have changed since they split, and chimpanzees living today are as evolved as humans are."
             ]
           },
+          { type: "h", text: "The fossil record" },
           {
-            type: "ask",
-            text: "If chimps and humans are both modern, what is wrong with saying 'we came from chimps, so chimps are less evolved'?"
+            type: "prose",
+            paragraphs: [
+              "Fossils show that walking upright came before large brains. Australopithecus afarensis lived in East Africa from about 3.9 to 3 million years ago. The best-known fossil, nicknamed Lucy, was found in Ethiopia in 1974 and is about 3.2 million years old. She walked upright and had a brain of about 400 cubic centimeters, which is about the size of a chimpanzee's. Footprints at Laetoli in Tanzania, made about 3.7 million years ago, also show upright walking. The brain of a modern human is about 1,350 cubic centimeters.",
+              "Homo erectus appeared in Africa about 1.9 million years ago. It had a brain of about 900 cubic centimeters and was the first human species to spread widely beyond Africa. Homo sapiens, our species, appeared in Africa at least 300,000 years ago. Fossils from Jebel Irhoud in Morocco are about 300,000 years old.",
+              "For most of that time there were other human species alive. Neanderthals lived in Europe and western Asia until about 40,000 years ago. Denisovans lived in Asia. Homo sapiens interbred with both groups. People whose ancestors lived outside Africa have about 1 to 2 percent Neanderthal DNA on average."
+            ]
+          },
+          { type: "h", text: "Recent human evolution" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Humans are still evolving. Skin color depends on the amount of melanin in the skin. Darker skin protects against ultraviolet radiation, which breaks down folate, a B vitamin. Lighter skin lets more ultraviolet light through, which helps the body make vitamin D where sunlight is weaker. Skin color varies gradually across regions in relation to ultraviolet levels, and it does not fall into separate categories.",
+              "Lactase persistence is the ability to digest the sugar in milk as an adult. It evolved separately in several populations that kept dairy animals, including in Europe and East Africa. Many people in Tibet carry a variant of the gene EPAS1 that helps them live at high altitude where there is less oxygen."
+            ]
           }
         ],
         activity: {
@@ -856,44 +917,65 @@
               title: "Introduction to Human Evolution",
               source: "Smithsonian Human Origins",
               url: "https://humanorigins.si.edu/education/introduction-human-evolution",
-              note: "The right page to leave open. Written for learners, and it does not turn people into a ladder."
+              note: "An overview of human evolution from the Smithsonian."
             },
             {
               kind: "Look",
               title: "Human family tree",
               source: "Smithsonian Human Origins",
               url: "https://humanorigins.si.edu/evidence/human-family-tree",
-              note: "Several relatives at once, which is the picture to remember. Tap around if the lamp is still on."
+              note: "An interactive chart of human species and when they lived."
             }
           ]
         },
         talk: [
-          "Which came first in our lineage, upright walking or a human-sized brain? Why does the order surprise people?",
-          "Why is skin color a sunlight adaptation, not a way of sorting people into kinds?"
+          "Which came first in the human lineage, upright walking or a large brain? What evidence shows this?",
+          "Why is skin color best explained as an adaptation to sunlight and not as a way of dividing people into groups?"
         ],
-        lights: "We are one African species of ape. Cousins, not grandchildren, of chimps — and not the goal of the tree."
+        summary: "Humans are apes whose closest living relatives are chimpanzees and bonobos. Upright walking evolved before large brains, and Homo sapiens appeared in Africa at least 300,000 years ago."
       },
       {
-        id: "happening-now",
-        title: "It's Still Happening",
-        tease: "Beaks, bug mouths, and bacteria. Scientists argue about the details and not about the trunk of the tree.",
-        reviewLabel: "Yesterday",
+        id: "evolution-now",
+        title: "Evolution happening now",
+        tease: "Examples of evolution observed over a few years or decades.",
         review: [
-          "Humans are apes, cousins of chimps, not their descendants. Upright walking came before big brains. Several human relatives lived at the same time. Skin color tracks sunlight. We are still a single species, and still evolving."
+          "Humans are apes, and our closest living relatives are chimpanzees and bonobos. Fossils show that upright walking came before large brains. Homo sapiens appeared in Africa at least 300,000 years ago, and our species is still evolving."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "You already met the Grants' finches: a drought, harder seeds, deeper beaks in the next generation, and a swing back when the weather changed. That is evolution measured in millimeters, on live birds, by people with notebooks. It is not a story about the distant past only.",
-              "Soapberry bugs in the southern United States feed by piercing fruit with a long beak. When a new tree with flatter fruit pods became common, populations that switched to it evolved shorter beaks, on the order of decades. Same insects, a new food, a heritable beak length that shifted. Nobody was breeding them on purpose.",
-              "Antibiotic resistance is the example with consequences. So is pesticide resistance in insects. The pattern is the beetle patch: a strong sorter, a short generation time, and a rare inherited difference that was already there or appeared by mutation. Evolution is not something the planet used to do.",
-              "Biologists do argue, and the arguments are real. How often is change slow, and how often is it a burst? How big a role does drift play, especially in small populations? Where exactly do you draw a species line in a fossil? Those fights happen on top of a trunk that is not in play: populations change, selection works, the Earth is old, and living things share ancestors. The trunk is held up by fossils, by geography, by anatomy, by the chromosome seam, by the virus scars, and by experiments you can watch. Evidence from independent directions agreeing is what 'settled' means. It does not mean 'we are done learning.'"
+              "Evolution can be observed directly when selection is strong or when organisms reproduce quickly. Many cases have been measured within the lifetimes of the scientists studying them."
             ]
           },
+          { type: "h", text: "Soapberry bugs" },
           {
-            type: "ask",
-            text: "Which of tonight's examples could you, in principle, watch during one human lifetime? Which would you need the rocks for?"
+            type: "prose",
+            paragraphs: [
+              "Soapberry bugs in Florida feed on the seeds of plants by piercing the fruit with a beak. The native balloon vine has large, round fruits, and bugs that feed on it have long beaks. The goldenrain tree, introduced from Asia, has flat fruits, and bugs feeding on it have evolved shorter beaks over a few decades."
+            ]
+          },
+          { type: "h", text: "Italian wall lizards" },
+          {
+            type: "prose",
+            paragraphs: [
+              "In 1971, scientists moved five pairs of Italian wall lizards to a small island in Croatia called Pod Mrčaru. When researchers returned about 36 years later, the lizards had larger heads and a stronger bite. They also had new valves in their gut that help digest plants, because the lizards on the island ate more plants than the original population did."
+            ]
+          },
+          { type: "h", text: "Pesticide and herbicide resistance" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Houseflies and mosquitoes evolved resistance to the pesticide DDT within a few years of its widespread use in the 1940s and 1950s. Many weeds, including Palmer amaranth, have evolved resistance to the herbicide glyphosate. The pattern is the same each time. A rare resistant individual survives the chemical, and its offspring make up most of the next generation."
+            ]
+          },
+          { type: "h", text: "Stickleback fish" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Threespine sticklebacks live in the sea and in fresh water. After the last ice age, sea populations colonized many lakes. In many lakes the fish lost the spines on their pelvic fins. In several of these populations, the loss is caused by a deletion in the part of the DNA that switches on a gene called Pitx1 in the developing pelvis.",
+              "Biologists still debate some questions about evolution, such as how often change happens in rapid bursts and how important genetic drift is compared with natural selection. These are questions about how evolution works. They are not questions about whether it happens."
+            ]
           }
         ],
         activity: {
@@ -903,107 +985,115 @@
               title: "Natural selection at work",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/natural-selection-at-work/",
-              note: "Cases of selection you don't have to imagine. A good follow-up to the finch story."
+              note: "Examples of natural selection that have been observed."
             },
             {
               kind: "Watch",
               title: "Evolving Switches, Evolving Bodies",
               source: "HHMI BioInteractive",
               url: "https://www.biointeractive.org/classroom-resources/making-fittest-evolving-switches-evolving-bodies",
-              note: "Stickleback fish, and how a switch in DNA can change a body. Longer than tonight. Save it."
+              note: "A film about how changes in gene switches changed the bodies of stickleback fish."
             }
           ]
         },
         talk: [
-          "What is the difference between 'scientists disagree' and 'anything goes'?",
-          "Why are bacteria a faster place to watch evolution than elephants?"
+          "Which of these examples could a person observe in a single lifetime? Which would need fossils to study?",
+          "Why do bacteria and insects show evolution faster than elephants or humans do?"
         ],
-        lights: "Evolution is measurable now. The open arguments are about how the details work, not about whether the family tree is real."
+        summary: "Evolution has been measured in bugs, lizards, weeds, and fish. It is fastest in organisms that reproduce quickly and face strong selection."
       },
       {
-        id: "how-we-know",
-        title: "How We Know",
-        tease: "A theory is not a guess. Here is what would have wrecked the idea, and what we found instead.",
-        reviewLabel: "Yesterday",
+        id: "evidence",
+        title: "Evidence for evolution",
+        tease: "What a scientific theory is and how the lines of evidence fit together.",
         review: [
-          "Finch beaks, soapberry-bug mouths, and antibiotic resistance are evolution you can time with a watch or a notebook. Biologists argue about pace and about drift. They are not arguing about whether populations change or whether life shares ancestors."
+          "Soapberry bugs, Italian wall lizards, resistant weeds, and stickleback fish have all been observed evolving. Evolution is fastest in organisms that reproduce quickly and face strong selection. Biologists debate details of how evolution works."
         ],
         body: [
           {
             type: "prose",
             paragraphs: [
-              "In everyday talk, 'theory' means a hunch. In science, a hypothesis is the hunch: an idea you can test. A theory is a big explanation that has survived tests and ties many facts together. Gravity is a theory. You still don't jump off a roof. Evolutionary theory is in that category. Calling it 'just a theory' is a mix-up about the word, not a discovery about the evidence.",
-              "Good theories say what would embarrass them. A fossil rabbit in rock that is truly a billion years old, sealed in place, with no contamination and no collapsed cave, would be a disaster for the timeline. We don't find that. A body plan that shares no nested similarities with anything, in anatomy or in DNA, would sit outside the tree. We don't find that either. What we find, over and over, is agreement: rocks, bones, geography, embryos studied carefully (not the old fake drawings of embryos that textbooks used to copy), and molecules, all telling compatible stories.",
-              "Here is the month in one breath. DNA is a copiable molecule, and the copies have typos. Parents pass on a shuffle, not a blend and not their muscles. More young are born than will have young. The world sorts the inherited differences, with no plan. Over deep time, sorted populations split, and the splits are the tree. We are one late twig, and we can check the work.",
-              "The point of these nights was not to finish biology. It was to see that the living world has a history, and that 'how do we know?' is a question with actual answers. You are allowed to keep asking it."
+              "In everyday speech, 'theory' can mean a guess. In science, a hypothesis is an idea that can be tested, and a theory is a well-tested explanation that accounts for many observations. The theory of gravity and the germ theory of disease are other examples. The theory of evolution says that populations change over time, mainly through natural selection and also through other processes such as genetic drift, and that all living things share common ancestors."
             ]
           },
+          { type: "h", text: "Predictions that could fail" },
           {
-            type: "ask",
-            text: "What would count as a real surprise — something that should make a scientist worried — rather than just a fact we haven't learned yet?"
+            type: "prose",
+            paragraphs: [
+              "A good theory makes predictions that could show it to be wrong. Evolution predicts that fossils appear in a consistent order, so a rabbit fossil in a billion-year-old rock would be a serious problem. It predicts that the relationships found from anatomy and from DNA should agree, and they do. It predicts that fossils such as Tiktaalik and early whales should be found in rocks of particular ages, and they have been."
+            ]
+          },
+          { type: "h", text: "Lines of evidence" },
+          {
+            type: "prose",
+            paragraphs: [
+              "Fossils show a consistent order of life through time, with transitional forms such as Tiktaalik and Ambulocetus. Homologous structures, such as the arm bones of humans, bats, whales, and horses, show common ancestry, and vestigial structures such as whale hip bones show that organisms carry features from their ancestors. DNA shows the same genetic code in all living things, nested patterns of similarity that match the fossil record, the fused human chromosome 2, and viral insertions shared at the same locations.",
+              "Geography adds evidence. Species on islands resemble species on the nearest mainland, as the Galápagos finches resemble South American finches. Embryos add more. The embryos of fish, birds, and humans all form pharyngeal arches. These become gills in fish and parts of the jaw, ear, and throat in humans. Dating methods based on radioactive decay agree with the order of fossils in rock layers. Finally, evolution has been observed directly in moths, finches, bacteria, and many other organisms.",
+              "Many independent lines of evidence lead to the same conclusion. This agreement is what scientists mean when they say that common descent is well established. Open questions about the details do not change that."
+            ]
           }
         ],
         activity: {
           quiz: [
             {
-              q: "A person lifts weights for years and builds big muscles. Their baby is born with those muscles. What's the careful answer?",
+              q: "A person lifts weights for years and builds large muscles. Their baby is born with large muscles. What is the correct explanation?",
               choices: [
-                "True. The body passes on what it practiced.",
-                "False. Muscles built in a lifetime are not written into the DNA that eggs and sperm carry.",
-                "True, but only if the weightlifter is the mother."
+                "The body passes on what it has practiced.",
+                "Muscles built during a lifetime are not written into the DNA in eggs and sperm, so they are not inherited.",
+                "It is true, but only if the weightlifter is the mother."
               ],
               answer: 1,
-              why: "Changes to ordinary body cells are not the recipe passed on. Evolution is about which inherited differences leave more offspring."
+              why: "Changes to ordinary body cells are not passed on. Evolution depends on inherited differences that lead to more offspring."
             },
             {
-              q: "In this course, what does fitness mean?",
+              q: "In biology, what does fitness mean?",
               choices: [
-                "Whoever is strongest or smartest.",
-                "Whoever leaves more offspring in that environment.",
-                "Whoever lives the longest, even with no young."
+                "Being the strongest or smartest.",
+                "Leaving more offspring in a given environment.",
+                "Living the longest, even without offspring."
               ],
               answer: 1,
-              why: "A trait is fit only relative to a place and a way of life. It is about offspring, not a trophy."
+              why: "A trait is fit only in relation to an environment and way of life. Fitness is measured by offspring."
             },
             {
-              q: "Humans evolved from chimpanzees.",
+              q: "Did humans evolve from chimpanzees?",
               choices: [
-                "Yes. Chimps are our grandparents.",
-                "No. Chimps are cousins. We share an ancestor that was neither of us.",
-                "Yes, but it was gorillas."
+                "Yes. Chimpanzees are our ancestors.",
+                "No. Humans and chimpanzees share a common ancestor that was neither of them.",
+                "Yes, but through gorillas."
               ],
               answer: 1,
-              why: "Both lines kept changing after the split. A living chimp is not an ancestor, and not a lower step."
+              why: "Both lineages kept changing after they split. Chimpanzees living today are not our ancestors."
             },
             {
-              q: "A fossil rabbit in rock that is truly a billion years old, with no mix-up, would be a problem because…",
+              q: "Why would a fossil rabbit in rock a billion years old be a problem for evolution?",
               choices: [
-                "Rabbits are unlucky.",
-                "The rest of the evidence says rabbits appear very late, after a long history of other animals.",
-                "Rabbits cannot become fossils."
+                "Rabbits cannot become fossils.",
+                "All other evidence shows that rabbits appeared very late, long after a billion years ago.",
+                "Rabbits are rare."
               ],
               answer: 1,
-              why: "The timeline makes predictions. A genuine billion-year-old rabbit would contradict a huge, consistent record."
+              why: "The fossil record makes a prediction about order. A genuine fossil rabbit in such old rock would contradict a large and consistent body of evidence."
             },
             {
               q: "Are humans more evolved than bacteria?",
               choices: [
                 "Yes. Humans are the goal of evolution.",
-                "No. Bacteria are superb at being bacteria, and there is no finish line.",
-                "Yes, because simple things stop evolving."
+                "No. Evolution has no goal, and bacteria have been evolving for as long as humans have since their lineages split.",
+                "Yes, because simple organisms stop evolving."
               ],
               answer: 1,
-              why: "Every branch has been changing since it split. Complicated does not mean more evolved."
+              why: "Every living lineage has been changing since it split from the others. A more complex organism is not more evolved."
             },
             {
               q: "Are birds dinosaurs?",
               choices: [
-                "No. Dinosaurs all died, and birds are a separate invention.",
-                "Yes. Birds are the dinosaur branch that survived.",
+                "No. All dinosaurs went extinct, and birds are unrelated.",
+                "Yes. Birds descend from small feathered dinosaurs that survived.",
                 "Only in cartoons."
               ],
               answer: 1,
-              why: "The non-bird dinosaurs ended 66 million years ago. Birds came through. They are dinosaurs the way bats are mammals."
+              why: "The non-bird dinosaurs went extinct 66 million years ago. Birds are the dinosaur lineage that survived."
             }
           ],
           links: [
@@ -1012,22 +1102,22 @@
               title: "Misconceptions about evolution",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/teach-evolution/misconceptions-about-evolution/",
-              note: "The best one-stop page when a phrase like 'just a theory' or 'it's only a ladder' shows up later."
+              note: "An article that corrects common misunderstandings about evolution."
             },
             {
               kind: "Read",
               title: "Evolution 101",
               source: "Understanding Evolution · UC Berkeley",
               url: "https://evolution.berkeley.edu/evolution-101/",
-              note: "The front door, if you want to wander past this course on your own."
+              note: "The start of a full introduction to evolution."
             }
           ]
         },
         talk: [
-          "Which night do you want to remember, and which one do you still not buy?",
-          "If there were a next course, what should it be: oceans, stars, brains, or something else?"
+          "What kind of discovery would count as evidence against evolution?",
+          "Which line of evidence do you find most convincing, and why?"
         ],
-        lights: "We know because independent lines of evidence agree, and because the idea keeps surviving tests that could have sunk it."
+        summary: "Fossils, anatomy, DNA, geography, embryos, dating, and direct observation all support evolution and common descent."
       }
     ]
   });

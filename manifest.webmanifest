@@ -1,6 +1,7 @@
 {
   "name": "Science Corner",
   "short_name": "Science Corner",
+  "description": "Science courses with readings, activities, and links to trusted sources.",
   "id": "/science-corner/",
   "start_url": "/science-corner/",
   "scope": "/science-corner/",

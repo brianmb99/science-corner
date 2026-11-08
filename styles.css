@@ -458,7 +458,11 @@ html[data-theme="night"] .check.on { color: #14241a; }
   text-align: center;
   text-decoration: none;
 }
-.dock .primary { flex: 1.3; }
+.dock .primary { flex: 1.8; }
+@media (max-width: 400px) {
+  .dock .wrap { gap: 6px; }
+  .dock button, .dock a { padding-left: 4px; padding-right: 4px; font-size: 0.95rem; }
+}
 
 .status { min-height: 1.4em; font-weight: 700; }
 .colophon { font-size: 0.85rem; margin-top: 22px; }

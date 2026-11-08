@@ -7,11 +7,11 @@
    A course is { id, title, blurb, added, lessons: [...] }.
    Each lesson is {
      id, title, tease,
-     reviewLabel, review: [paragraph strings],
+     reviewLabel (optional, defaults to "Last time"), review: [paragraph strings],
      body: [{ type: "prose", paragraphs: [] } | { type: "aside", title, text } | { type: "ask", text }],
      activity: { widget?: "pairs"|"copies"|"selection"|"timeline"|"homology"|"blindspot"|"tree", links?: [], quiz?: [] },
      talk: [two questions],
-     lights: "one sentence to land on"
+     summary: "one or two sentences"
    }
-   Paragraphs may use **bold** and [label](https://...) — nothing else is parsed. */
+   Paragraphs may use **bold** and [label](https://...) (nothing else is parsed). */
 window.SCIENCE_COURSES = window.SCIENCE_COURSES || [];

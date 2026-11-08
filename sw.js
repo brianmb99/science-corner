@@ -1,7 +1,7 @@
 /* Offline copy of Science Corner. Scope is this site only (/science-corner/ on GitHub Pages). */
 "use strict";
 
-const VERSION = "science-corner-v1";
+const VERSION = "science-corner-v2";
 const CACHE = VERSION;
 const PRECACHE = [
   "./",

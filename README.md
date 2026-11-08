@@ -1,6 +1,6 @@
 # Science Corner
 
-Short science lessons to read together. The first course is Evolution: twenty nights, about ten minutes each.
+Science courses with readings, activities, and links to trusted sources. The first course is Evolution.
 
 Live site: https://brianmb99.github.io/science-corner/
 
@@ -11,4 +11,4 @@ Live site: https://brianmb99.github.io/science-corner/
 
 The home page lists courses newest-first by `added` (`YYYY-MM-DD`).
 
-GitHub Pages serves this repo from `main`. The site’s base path is `/science-corner/`.
+GitHub Pages serves this repo from `main`. The site's base path is `/science-corner/`.

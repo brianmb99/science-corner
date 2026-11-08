@@ -147,9 +147,9 @@
     button.type = "button";
     function paint() {
       var night = state.theme === "night";
-      button.textContent = night ? "Warmer" : "Dimmer";
+      button.textContent = night ? "Light" : "Dark";
       button.setAttribute("aria-pressed", night ? "true" : "false");
-      button.setAttribute("aria-label", night ? "Switch to the warmer lamp" : "Dim the lamp");
+      button.setAttribute("aria-label", night ? "Switch to light theme" : "Switch to dark theme");
     }
     paint();
     button.addEventListener("click", function () {
@@ -189,16 +189,14 @@
     document.title = "Science Corner";
     var bar = el("header", "topbar");
     var heading = el("div");
-    heading.appendChild(text("p", "eyebrow", "Ten minutes a night"));
     heading.appendChild(text("h1", "", "Science Corner"));
     bar.appendChild(heading);
     bar.appendChild(themeButton());
     sheet.appendChild(bar);
     sheet.appendChild(el("div", "rule"));
-    sheet.appendChild(paragraph("Short lessons to read together. Made for Brian and his daughter. One course so far — more can be added the same way, as a new file of nights."));
     var list = courses();
     if (!list.length) {
-      sheet.appendChild(paragraph("No courses are loaded yet."));
+      sheet.appendChild(paragraph("No courses are available."));
       return;
     }
     var ul = el("ul", "course-list");
@@ -210,9 +208,9 @@
       card.href = "#/" + course.id;
       card.appendChild(text("span", "label", "Course"));
       card.appendChild(text("span", "title", course.title));
-      card.appendChild(text("span", "meta", total + " nights · about 10 minutes each"));
+      card.appendChild(text("span", "meta", total + " lessons"));
       card.appendChild(text("span", "blurb", course.blurb || ""));
-      card.appendChild(text("span", "meta", done + " of " + total + " marked done on this device"));
+      card.appendChild(text("span", "meta", done + " of " + total + " lessons completed"));
       var barWrap = el("span", "bar");
       var fill = el("i");
       fill.style.width = total ? Math.round((done / total) * 100) + "%" : "0%";
@@ -223,7 +221,7 @@
       ul.appendChild(li);
     });
     sheet.appendChild(ul);
-    sheet.appendChild(text("p", "colophon", "Checkmarks stay on this phone or tablet only. Nothing is sent anywhere. Outside links go to Learn.Genetics at the University of Utah, HHMI BioInteractive, PBS Eons, Crash Course Kids, PhET, the Smithsonian Human Origins Program, and Understanding Evolution at Berkeley. They were checked in November 2026."));
+    sheet.appendChild(text("p", "colophon", "Progress is stored in this browser only. Links to other sites lead to Learn.Genetics at the University of Utah, HHMI BioInteractive, PBS Eons, Crash Course Kids, PhET at the University of Colorado, the Smithsonian Human Origins Program, and Understanding Evolution at UC Berkeley."));
   }
 
   function renderCourse(sheet, course) {
@@ -234,21 +232,20 @@
     sheet.appendChild(backLink("#/", "All courses"));
     var bar = el("header", "topbar");
     var heading = el("div");
-    heading.appendChild(text("p", "eyebrow", lessons.length + " nights"));
+    heading.appendChild(text("p", "eyebrow", lessons.length + " lessons"));
     heading.appendChild(text("h1", "", course.title));
     bar.appendChild(heading);
     bar.appendChild(themeButton());
     sheet.appendChild(bar);
     sheet.appendChild(el("div", "rule"));
     sheet.appendChild(paragraph(course.blurb || ""));
-    sheet.appendChild(paragraph("Read a night out loud, or take turns. Do the one activity, or watch the one short video. Mark it done when you stop — ten minutes is enough, even mid-sentence."));
     if (next) {
       var go = el("a", "go");
-      var nightNo = 1;
-      for (var i = 0; i < lessons.length; i++) if (lessons[i].id === next.id) nightNo = i + 1;
+      var lessonNo = 1;
+      for (var i = 0; i < lessons.length; i++) if (lessons[i].id === next.id) lessonNo = i + 1;
       var allDone = !undone;
       go.href = "#/" + course.id + "/" + next.id;
-      go.textContent = allDone ? "Read again from night 1" : (doneCount(course) === 0 && (!state.last || state.last.course !== course.id) ? "Start night 1" : "Continue · night " + nightNo);
+      go.textContent = allDone ? "Review from lesson 1" : (doneCount(course) === 0 && (!state.last || state.last.course !== course.id) ? "Start lesson 1" : "Continue with lesson " + lessonNo);
       sheet.appendChild(go);
     }
     var ul = el("ul", "lesson-list");
@@ -261,7 +258,7 @@
       mid.appendChild(text("span", "title", lesson.title));
       link.appendChild(mid);
       var mark = text("span", "check" + (isDone(course, lesson) ? " on" : ""), isDone(course, lesson) ? "✓" : "");
-      mark.setAttribute("aria-label", isDone(course, lesson) ? "Done" : "Not done yet");
+      mark.setAttribute("aria-label", isDone(course, lesson) ? "Completed" : "Not completed");
       link.appendChild(mark);
       var tease = text("span", "tease", lesson.tease || "");
       link.appendChild(tease);
@@ -280,8 +277,8 @@
 
   function renderMissing(sheet) {
     document.title = "Science Corner";
-    sheet.appendChild(text("h1", "", "That page isn't here"));
-    sheet.appendChild(backLink("#/", "Back to the courses"));
+    sheet.appendChild(text("h1", "", "Page not found"));
+    sheet.appendChild(backLink("#/", "All courses"));
   }
 
   function renderLesson(sheet, course, lesson, index) {
@@ -292,7 +289,7 @@
     sheet.appendChild(backLink("#/" + course.id, course.title));
     var bar = el("header", "topbar");
     var heading = el("div");
-    heading.appendChild(text("p", "eyebrow", "Night " + (index + 1) + " of " + lessons.length));
+    heading.appendChild(text("p", "eyebrow", "Lesson " + (index + 1) + " of " + lessons.length));
     heading.appendChild(text("h1", "", lesson.title));
     bar.appendChild(heading);
     bar.appendChild(themeButton());
@@ -301,7 +298,7 @@
 
     if (lesson.review && lesson.review.length) {
       var review = el("section", "review");
-      review.appendChild(text("p", "label", lesson.reviewLabel || "Yesterday"));
+      review.appendChild(text("p", "label", lesson.reviewLabel || "Last time"));
       lesson.review.forEach(function (line) { review.appendChild(paragraph(line)); });
       sheet.appendChild(review);
     }
@@ -317,7 +314,7 @@
         sheet.appendChild(aside);
       } else if (block.type === "ask") {
         var ask = el("section", "ask");
-        ask.appendChild(text("p", "label", "Pause and ask"));
+        ask.appendChild(text("p", "label", "Question"));
         ask.appendChild(paragraph(block.text || ""));
         sheet.appendChild(ask);
       } else if (block.type === "h") {
@@ -328,7 +325,7 @@
     var activity = lesson.activity || {};
     if (activity.widget && WIDGETS[activity.widget]) {
       var widget = el("section", "widget");
-      widget.setAttribute("aria-label", "Tonight's activity");
+      widget.setAttribute("aria-label", "Activity");
       WIDGETS[activity.widget](widget);
       sheet.appendChild(widget);
     }
@@ -337,7 +334,7 @@
 
     if (lesson.talk && lesson.talk.length) {
       var talk = el("section", "talk");
-      talk.appendChild(text("h2", "", "If the lamp is still on"));
+      talk.appendChild(text("h2", "", "Discussion questions"));
       var ol = el("ol");
       lesson.talk.forEach(function (line) {
         var li = el("li");
@@ -348,11 +345,11 @@
       sheet.appendChild(talk);
     }
 
-    if (lesson.lights) {
-      var lights = el("section", "lights");
-      lights.appendChild(text("p", "label", "Before lights out"));
-      lights.appendChild(paragraph(lesson.lights));
-      sheet.appendChild(lights);
+    if (lesson.summary) {
+      var summary = el("section", "lights");
+      summary.appendChild(text("p", "label", "Summary"));
+      summary.appendChild(paragraph(lesson.summary));
+      sheet.appendChild(summary);
     }
 
     sheet.appendChild(dock(course, lesson, index));
@@ -372,8 +369,8 @@
 
   function quizCard(questions) {
     var box = el("section", "quiz");
-    box.appendChild(text("h2", "", "A quick check"));
-    box.appendChild(paragraph("No score is saved. Missing one just means it was a good question."));
+    box.appendChild(text("h2", "", "Quick check"));
+    box.appendChild(paragraph("Choose an answer for each question. Scores are not saved."));
     var cursor = 0;
     var stage = el("div");
     box.appendChild(stage);
@@ -381,10 +378,10 @@
     function show() {
       clear(stage);
       if (cursor >= questions.length) {
-        stage.appendChild(paragraph("That's the check. You can leave it, or run it again tomorrow and see what stuck."));
+        stage.appendChild(paragraph("You have answered all of the questions."));
         var again = el("button", "ghost");
         again.type = "button";
-        again.textContent = "Try these again";
+        again.textContent = "Try again";
         again.addEventListener("click", function () {
           cursor = 0;
           show();
@@ -412,7 +409,7 @@
           if (item.why) stage.appendChild(paragraph(item.why, "why"));
           var next = el("button", "primary");
           next.type = "button";
-          next.textContent = cursor === questions.length - 1 ? "Finish check" : "Next question";
+          next.textContent = cursor === questions.length - 1 ? "Finish" : "Next question";
           next.addEventListener("click", function () {
             cursor += 1;
             show();
@@ -430,7 +427,7 @@
   function dock(course, lesson, index) {
     var lessons = course.lessons;
     var bar = el("nav", "dock");
-    bar.setAttribute("aria-label", "Night to night");
+    bar.setAttribute("aria-label", "Lesson navigation");
     var wrap = el("div", "wrap");
     var prev = el("a", "ghost");
     if (index > 0) {
@@ -438,7 +435,7 @@
       prev.textContent = "Prev";
     } else {
       prev.href = "#/" + course.id;
-      prev.textContent = "Nights";
+      prev.textContent = "Lessons";
     }
     var done = el("button", "primary" + (isDone(course, lesson) ? " done" : ""));
     done.type = "button";
@@ -446,7 +443,7 @@
     function paintDone() {
       var on = isDone(course, lesson);
       done.className = "primary" + (on ? " done" : "");
-      done.textContent = on ? "Done" : "Mark done";
+      done.textContent = on ? "Completed" : "Mark complete";
       done.setAttribute("aria-pressed", on ? "true" : "false");
     }
     paintDone();
@@ -463,7 +460,7 @@
       next.textContent = "Next";
     } else {
       next.href = "#/" + course.id;
-      next.textContent = "Nights";
+      next.textContent = "Lessons";
     }
     wrap.appendChild(prev);
     wrap.appendChild(done);
@@ -485,8 +482,8 @@
     var match = { A: "T", T: "A", C: "G", G: "C" };
     var index = 0;
     var note = "";
-    host.appendChild(text("h2", "", "Pair the bases"));
-    host.appendChild(paragraph("A cell matches **A with T** and **C with G**. Those rungs are hydrogen bonds. Fill in the other strand."));
+    host.appendChild(text("h2", "", "Base pairing"));
+    host.appendChild(paragraph("Adenine (A) pairs with thymine (T), and cytosine (C) pairs with guanine (G). For each base on the template strand, choose the base that pairs with it."));
     var view = el("div");
     host.appendChild(view);
     function render() {
@@ -500,23 +497,23 @@
       });
       view.appendChild(strand);
       if (index >= template.length) {
-        view.appendChild(paragraph("That's the zipper. The backbone stays put, held by stronger covalent bonds. The hydrogen bonds are the part that can open."));
-        view.appendChild(button("Pair another strand", "ghost", function () {
+        view.appendChild(paragraph("The new strand is complete. Hydrogen bonds hold the two strands together, and covalent bonds hold each backbone together. The hydrogen bonds are weaker, so the strands can be separated."));
+        view.appendChild(button("Try again", "ghost", function () {
           index = 0;
           note = "";
           render();
         }));
         return;
       }
-      view.appendChild(text("p", "status", note || "Letter " + (index + 1) + " of 8 — which base fits?"));
+      view.appendChild(text("p", "status", note || "Base " + (index + 1) + " of 8. Which base pairs with " + template[index] + "?"));
       var row = el("div", "row");
       ["A", "T", "C", "G"].forEach(function (letter) {
         row.appendChild(button(letter, "primary", function () {
           if (letter === match[template[index]]) {
             index += 1;
-            note = index >= template.length ? "" : "Yes. " + template[index - 1] + " holds " + letter + ".";
+            note = index >= template.length ? "" : "Correct. " + template[index - 1] + " pairs with " + letter + ".";
           } else {
-            note = letter + " doesn't hold " + template[index] + ". A holds T. C holds G.";
+            note = letter + " does not pair with " + template[index] + ". A pairs with T, and C pairs with G.";
           }
           render();
         }));
@@ -529,15 +526,15 @@
   function mountCopies(host) {
     var original = "ATGCCGAT".split("");
     var rows = [original.slice()];
-    host.appendChild(text("h2", "", "Copy the recipe"));
-    host.appendChild(paragraph("Each row is a copy of the row above it. This toy mistypes on purpose, so you can see a typo. Real DNA copying is far more careful: a human baby has on the order of a hundred new letter changes, out of three billion letters."));
+    host.appendChild(text("h2", "", "Copying errors"));
+    host.appendChild(paragraph("Each row is a copy of the row above it. This model makes an error about once in every seven bases so that changes show up quickly. Real DNA copying makes far fewer errors, about one in every 100 million bases after proofreading."));
     var view = el("div");
     host.appendChild(view);
     function render() {
       clear(view);
       rows.forEach(function (row, rowIndex) {
         var line = el("p", "seq");
-        line.appendChild(document.createTextNode(rowIndex === 0 ? "Start  " : "Copy " + rowIndex + " "));
+        line.appendChild(document.createTextNode(rowIndex === 0 ? "Original  " : "Copy " + rowIndex + "  "));
         row.forEach(function (letter, i) {
           if (letter !== original[i]) line.appendChild(text("b", "", letter));
           else line.appendChild(document.createTextNode(letter));
@@ -546,7 +543,7 @@
         view.appendChild(line);
       });
       var changed = rows[rows.length - 1].some(function (letter, i) { return letter !== original[i]; });
-      view.appendChild(paragraph(changed ? "Gold letters differ from the start. Nothing chose them. Selection, later, can only work with whatever copying left behind." : "No gold letters yet. Copy again. A typo will show up."));
+      view.appendChild(paragraph(changed ? "Highlighted bases differ from the original. They are copying errors, and nothing chose them. Natural selection can only act on changes like these after they happen." : "No changes yet. Copy again."));
     }
     render();
     host.appendChild(button("Copy again", "primary", function () {
@@ -571,8 +568,8 @@
     var labels = false;
     var switched = false;
     var beetles = seed();
-    host.appendChild(text("h2", "", "The beetle patch"));
-    host.appendChild(paragraph("You are the bird. You get six pecks. Tap the beetles you notice. Then the survivors have babies, and a baby usually matches its parent."));
+    host.appendChild(text("h2", "", "Beetle population"));
+    host.appendChild(paragraph("You are a bird that eats beetles. Click a beetle to eat it. You can eat six beetles each season. The surviving beetles then reproduce, and each baby usually has the same color as its parent."));
     var view = el("div");
     host.appendChild(view);
     function seed() {
@@ -603,13 +600,13 @@
       clear(view);
       var tally = counts();
       var ground = habitat === "leaf" ? "green leaves" : "dark soil";
-      view.appendChild(text("p", "status", "Season " + season + " · " + ground + " · green " + tally.green + " · brown " + tally.brown + " · pecks left " + pecks));
+      view.appendChild(text("p", "status", "Season " + season + " · " + ground + " · green " + tally.green + " · brown " + tally.brown + " · left to eat: " + pecks));
       var patch = el("div", "patch " + habitat);
       beetles.forEach(function (beetle) {
         var bug = el("button", "beetle " + beetle.color + (beetle.alive ? "" : " gone") + (beetle.mut ? " mut" : ""));
         bug.type = "button";
         bug.disabled = !beetle.alive || pecks <= 0;
-        bug.setAttribute("aria-label", (beetle.color === "green" ? "Green" : "Brown") + " beetle" + (beetle.mut ? ", a new color from a mutation" : ""));
+        bug.setAttribute("aria-label", (beetle.color === "green" ? "Green" : "Brown") + " beetle" + (beetle.mut ? ", new color from a mutation" : ""));
         if (labels && beetle.alive) bug.textContent = beetle.color === "green" ? "G" : "B";
         var spotA = el("span", "spot a");
         var spotB = el("span", "spot b");
@@ -626,13 +623,13 @@
       view.appendChild(patch);
       var easier = habitat === "leaf" ? "brown" : "green";
       var line;
-      if (pecks > 0) line = "The ones that stand out on " + ground + " are the " + easier + " beetles. A honey ring means that baby got a mutation.";
-      else line = "Pecks used up. Survivors have the babies. Babies mostly match a parent. About one in twelve flips color.";
-      if (switched) line += " Same beetles, new ground. Who is easy to see just changed.";
+      if (pecks > 0) line = "On " + ground + ", " + easier + " beetles are easier to see. A ring around a beetle marks a baby with a new color from a mutation.";
+      else line = "You have eaten six beetles. The survivors reproduce next. Each baby usually matches its parent, and about one baby in twelve has the other color.";
+      if (switched) line += " The habitat changed, so a different color is now easier to see.";
       view.appendChild(paragraph(line));
       var row = el("div", "row");
       if (pecks <= 0) {
-        row.appendChild(button("Survivors have babies", "primary", function () {
+        row.appendChild(button("Survivors reproduce", "primary", function () {
           var survivors = beetles.filter(function (beetle) { return beetle.alive; });
           var next = [];
           var n = 0;
@@ -660,7 +657,7 @@
         switched = true;
         render();
       }));
-      row.appendChild(button(labels ? "Hide letters" : "Label the colors", "ghost", function () {
+      row.appendChild(button(labels ? "Hide color letters" : "Show color letters", "ghost", function () {
         labels = !labels;
         render();
       }));
@@ -679,20 +676,20 @@
 
   function mountTimeline(host) {
     var chapters = [
-      { at: 0, when: "January 1", title: "Earth forms", body: "About 4.5 billion years ago. Molten rock, a young atmosphere, no life." },
-      { at: 0.229, when: "March 25", title: "Life is already here", body: "By about 3.5 billion years ago there are fossil clues of microbes. Maybe earlier. For a very long time, that is the whole living world." },
-      { at: 0.471, when: "June 21", title: "Oxygen changes the air", body: "Bacteria that photosynthesize have been leaking oxygen. Around 2.4 billion years ago it starts to remake the atmosphere." },
-      { at: 0.67, when: "August", title: "Still mostly microbes", body: "Drag slowly. Animals have not started. If the year is Earth's history, summer is still a microbial planet." },
-      { at: 0.874, when: "November 15", title: "Animals", body: "Around 575 million years ago, the first animals. A few days later, in the Cambrian, many of the animal body plans show up in the rocks. Latecomers, all of them." },
-      { at: 0.918, when: "December 1", title: "A fish with wrists", body: "Tiktaalik, about 375 million years ago. Fins, scales, and also a neck and wrist bones. Tomorrow's rocks, if you are on that night." },
-      { at: 0.949, when: "December 12", title: "Dinosaurs begin", body: "Around 230 million years ago. They will own a lot of the land for a long time. They are still not the point of the year." },
-      { at: 0.985, when: "December 26", title: "The non-bird dinosaurs end", body: "About 66 million years ago, an asteroid. Birds make it through. A bird is a dinosaur, the way a bat is a mammal." },
-      { at: 0.9993, when: "December 31, about 6 p.m.", title: "Lucy", body: "Australopithecus, about 3.2 million years ago. Walking upright, small brain. On this calendar she arrives in the early evening of the last day." },
-      { at: 1, when: "December 31, last minutes", title: "Us", body: "Homo sapiens is about 300,000 years old: roughly the last 35 minutes before midnight. Written history is the last couple of minutes. A childhood is shorter than a blink on this clock." },
+      { at: 0, when: "January 1", title: "Earth forms", body: "About 4.5 billion years ago. The surface is molten rock and there is no life." },
+      { at: 0.229, when: "March 25", title: "Earliest life", body: "Fossils of microorganisms are at least 3.5 billion years old, and chemical evidence suggests life may be older. For most of Earth's history, living things are mostly single-celled." },
+      { at: 0.471, when: "June 21", title: "Oxygen builds up", body: "Photosynthetic bacteria release oxygen. Starting about 2.4 billion years ago, oxygen builds up in the atmosphere." },
+      { at: 0.67, when: "August", title: "Cells with nuclei", body: "About 1.5 billion years ago. Eukaryotic cells, which have a nucleus, have evolved. Animals have not yet appeared." },
+      { at: 0.874, when: "November 15", title: "First animals", body: "About 575 million years ago, the first animal fossils appear. Most of the major groups of animals appear in the fossil record starting about 539 million years ago, at the start of the Cambrian period." },
+      { at: 0.918, when: "December 1", title: "Tiktaalik", body: "About 375 million years ago. Tiktaalik is a fish with limb-like fins and a neck. Four-legged animals appear soon after." },
+      { at: 0.949, when: "December 12", title: "First dinosaurs", body: "About 230 million years ago, the first dinosaurs appear." },
+      { at: 0.985, when: "December 26", title: "Non-bird dinosaurs go extinct", body: "About 66 million years ago, an asteroid impact causes the extinction of the non-bird dinosaurs. Birds survive. Birds are dinosaurs." },
+      { at: 0.9993, when: "December 31, about 6 p.m.", title: "Lucy", body: "Lucy is an Australopithecus afarensis who lived about 3.2 million years ago. She walked upright and had a small brain." },
+      { at: 1, when: "December 31, last 35 minutes", title: "Homo sapiens", body: "Our species is about 300,000 years old, which is about the last 35 minutes of the year. Written history covers about the last 35 seconds." },
     ];
     var pos = 0;
-    host.appendChild(text("h2", "", "If Earth's history were one year"));
-    host.appendChild(paragraph("January 1 is the planet forming. Midnight on December 31 is tonight. The bar is to scale. The buttons are there so you don't have to hunt for us in the last pixel."));
+    host.appendChild(text("h2", "", "Earth's history as one calendar year"));
+    host.appendChild(paragraph("The 4.54 billion years of Earth's history are shown as one year. January 1 is when the Earth formed, and midnight on December 31 is the present. The bar is to scale. Move the slider or choose an event."));
     var bar = el("div", "yearbar");
     var marker = el("i");
     bar.appendChild(marker);
@@ -726,7 +723,7 @@
       card.appendChild(paragraph(chapters[current].body));
       clear(jumps);
       chapters.forEach(function (chapter, i) {
-        jumps.appendChild(button(chapter.when + " — " + chapter.title, "chapter" + (i === current ? " on" : ""), function () {
+        jumps.appendChild(button(chapter.when + ": " + chapter.title, "chapter" + (i === current ? " on" : ""), function () {
           pos = Math.round(chapter.at * 1000);
           render();
         }));
@@ -741,20 +738,20 @@
 
   function mountHomology(host) {
     var bones = [
-      { id: "humerus", label: "One upper bone" },
-      { id: "pair", label: "Two forearm bones" },
-      { id: "wrist", label: "A cluster of wrist bones" },
+      { id: "humerus", label: "Upper arm bone" },
+      { id: "pair", label: "Forearm bones" },
+      { id: "wrist", label: "Wrist bones" },
       { id: "digits", label: "Digits" },
     ];
     var active = "humerus";
     var limbs = [
-      { cls: "human", name: "Your arm", note: "For reaching and holding." },
-      { cls: "bat", name: "A bat's wing", note: "The digits are long. Skin stretches between them." },
-      { cls: "whale", name: "A whale's flipper", note: "Short and stiff, for steering a huge body." },
-      { cls: "horse", name: "A horse's front leg", note: "The horse stands on one long digit. The other digits shrank." },
+      { cls: "human", name: "Human arm", note: "Used for reaching and gripping." },
+      { cls: "bat", name: "Bat wing", note: "The digits are very long, with skin stretched between them." },
+      { cls: "whale", name: "Whale flipper", note: "Short and stiff, used for steering." },
+      { cls: "horse", name: "Horse foreleg", note: "The horse stands on one long digit. The other digits are reduced to small splint bones." },
     ];
-    host.appendChild(text("h2", "", "Same bones, four jobs"));
-    host.appendChild(paragraph("Simplified on purpose. The real pattern is one bone, then two, then many little bones, then digits. Tap a bone and it lights up in every limb."));
+    host.appendChild(text("h2", "", "Limb bones compared"));
+    host.appendChild(paragraph("Each limb has one upper bone, two forearm bones, a group of wrist bones, and digits. The diagram is simplified. Select a bone to highlight it in every limb."));
     var view = el("div");
     host.appendChild(view);
     function render() {
@@ -792,65 +789,65 @@
   }
 
   function mountBlindspot(host) {
-    host.appendChild(text("h2", "", "Find the blind spot"));
-    host.appendChild(paragraph("Cover your left eye. Look at the dot with your right eye only. Keep looking at the dot — don't glance at the cross — and move the phone slowly closer and farther."));
+    host.appendChild(text("h2", "", "Find your blind spot"));
+    host.appendChild(paragraph("Cover your left eye and look at the dot with your right eye. Keep looking at the dot, and slowly move the screen closer to you and farther away. At some distance the cross disappears."));
     var row = el("div", "blind-row");
     row.appendChild(el("span", "dot"));
     row.appendChild(text("span", "cross", "+"));
     host.appendChild(row);
-    host.appendChild(paragraph("When the cross vanishes, that bit of the page is falling on the place where the nerve leaves the eye. The brain fills the hole in. An octopus eye, which evolved separately, is wired so it doesn't have this gap. Ours does, because of history, and it is good enough."));
-    host.appendChild(paragraph("If you can't find it, try the phone a bit farther away, still looking only at the dot. It is a small trick, not a test."));
+    host.appendChild(paragraph("The cross disappears when its image falls on the blind spot, the place where the optic nerve leaves the retina and there are no light-detecting cells. The brain fills in the gap using the surrounding image. Octopus eyes evolved separately and are wired differently, so they have no blind spot."));
+    host.appendChild(paragraph("If the cross does not disappear, keep looking only at the dot and move more slowly. The distance that works depends on the screen: roughly 50 centimeters for a computer screen and 20 centimeters for a phone."));
   }
 
   function mountTree(host) {
     var tree = {
       id: "life",
-      name: "All life we know",
+      name: "All living things",
       you: true,
-      text: "One connected family. The root we can infer is LUCA, the last universal common ancestor: already a cell with DNA and ribosomes, not the first living thing.",
+      text: "All living things share a common ancestor. The most recent one is called LUCA, the last universal common ancestor. It was already a cell with DNA and ribosomes, so it was not the first form of life.",
       kids: [
-        { id: "bacteria", name: "Bacteria", text: "One of the three great branches. Tiny cells, no nucleus, and an astonishing range of ways to make a living. Your mitochondria used to be bacteria." },
-        { id: "archaea", name: "Archaea", text: "Say ar-KEE-uh. Not 'ancient bacteria' — their own branch. Eukaryotes, including you, are closer to archaea than to bacteria." },
+        { id: "bacteria", name: "Bacteria", text: "Single-celled organisms without a nucleus. They live almost everywhere. Mitochondria in the cells of animals, plants, and fungi descend from bacteria." },
+        { id: "archaea", name: "Archaea", text: "Pronounced ar-KEE-uh. Single-celled organisms without a nucleus, like bacteria, but a separate group. Many live in extreme places such as hot springs, and many live in ordinary soil and oceans. Eukaryotes are more closely related to archaea than to bacteria." },
         {
           id: "eukarya",
           name: "Eukarya",
           you: true,
-          text: "Cells with a nucleus. Animals, plants, fungi, and a huge crowd of microbes that are neither.",
+          text: "Organisms whose cells have a nucleus. This group includes animals, plants, fungi, and many single-celled organisms such as amoebas and algae.",
           kids: [
-            { id: "plants", name: "Plants", text: "They have a second bacterial roommate besides mitochondria: the chloroplast, which does the photosynthesis." },
-            { id: "fungi", name: "Fungi", text: "Mushrooms, yeast, mold. Closer cousins to animals than plants are. A mushroom is more like you than like a daisy." },
+            { id: "plants", name: "Plants", text: "Plant cells have chloroplasts as well as mitochondria. Chloroplasts descend from photosynthetic bacteria." },
+            { id: "fungi", name: "Fungi", text: "Mushrooms, molds, and yeasts. Fungi are more closely related to animals than to plants." },
             {
               id: "animals",
               name: "Animals",
               you: true,
-              text: "Most animals are not vertebrates. Insects, snails, jellyfish, and worms are the bulk of the branch.",
+              text: "Most animal species are invertebrates, which are animals without a backbone. Insects, mollusks, worms, and jellyfish make up most of the group.",
               kids: [
-                { id: "others", name: "Most animals", text: "No backbone. This is the majority, not a leftover category." },
+                { id: "others", name: "Invertebrates", text: "Animals without a backbone. They make up most animal species." },
                 {
                   id: "verts",
                   name: "Vertebrates",
                   you: true,
-                  text: "A backbone. Fishes are relatives along and beside our line. We did not come from a salmon. Lungfish are closer cousins than a goldfish is.",
+                  text: "Animals with a backbone: fish, amphibians, reptiles, birds, and mammals. Land vertebrates descend from lobe-finned fishes. Lungfish are more closely related to humans than to goldfish.",
                   kids: [
                     {
                       id: "mammals",
                       name: "Mammals",
                       you: true,
-                      text: "Hair or fur, and milk. Birds, reptiles, and amphibians are other vertebrate branches, not steps we passed through on a ladder.",
+                      text: "Animals with hair that nurse their young with milk. Birds, reptiles, and amphibians are separate vertebrate groups.",
                       kids: [
                         {
                           id: "primates",
                           name: "Primates",
                           you: true,
-                          text: "Grasping hands and forward-facing eyes. Lemurs, monkeys, and apes.",
+                          text: "Lemurs, monkeys, and apes. Primates have grasping hands and forward-facing eyes.",
                           kids: [
                             {
                               id: "apes",
                               name: "Apes",
                               you: true,
-                              text: "No tail. Gibbons, orangutans, gorillas, chimpanzees, bonobos, and humans.",
+                              text: "Primates without a tail: gibbons, orangutans, gorillas, chimpanzees, bonobos, and humans.",
                               kids: [
-                                { id: "humans", name: "Humans", you: true, text: "One living species, Homo sapiens. A twig. Not the point of the tree, and not more evolved than the bacteria at the other side of the page." },
+                                { id: "humans", name: "Humans", you: true, text: "Homo sapiens is the only living species of human. Chimpanzees and bonobos are our closest living relatives. Humans are not more evolved than other living species, because every living species has been evolving for the same length of time since its lineage split from the others." },
                               ],
                             },
                           ],
@@ -866,16 +863,16 @@
       ],
     };
     var open = { life: true };
-    host.appendChild(text("h2", "", "A tree, not a ladder"));
-    host.appendChild(paragraph("Tap a name to open it. The honey edge marks the path that leads to you. Nothing on the tree is 'ahead' of anything else. Every tip has had the same amount of time."));
+    host.appendChild(text("h2", "", "Tree of life"));
+    host.appendChild(paragraph("Select a name to open that branch. The highlighted names are the path to humans. No branch is ahead of another, because every branch tip has had the same amount of time to evolve."));
     var controls = el("div", "row");
-    controls.appendChild(button("Where am I?", "primary", function () {
+    controls.appendChild(button("Show path to humans", "primary", function () {
       expandYou(tree);
       render();
       var human = host.querySelector('[data-node="humans"]');
       if (human && human.scrollIntoView) human.scrollIntoView({ block: "nearest" });
     }));
-    controls.appendChild(button("Close the branches", "ghost", function () {
+    controls.appendChild(button("Collapse all", "ghost", function () {
       open = { life: true };
       render();
     }));
