@@ -1,7 +1,7 @@
-/* Evolution — twenty bedtime nights. Bridge from atoms, bonds, and molecules. */
+/* Evolution — twenty nights. Bridge from atoms, bonds, and molecules. */
 (function () {
-  window.BEDTIME_COURSES = window.BEDTIME_COURSES || [];
-  window.BEDTIME_COURSES.push({
+  window.SCIENCE_COURSES = window.SCIENCE_COURSES || [];
+  window.SCIENCE_COURSES.push({
     id: "evolution",
     title: "Evolution",
     added: "2026-11-08",
@@ -95,7 +95,7 @@
               title: "Build a DNA Molecule",
               source: "Learn.Genetics · University of Utah",
               url: "https://learn.genetics.utah.edu/content/basics/builddna/",
-              note: "Happier on a computer than on a phone. The matcher on this page is the bedtime version."
+              note: "Happier on a computer than on a phone. The matcher on this page is the one to use here."
             }
           ]
         },
@@ -490,7 +490,7 @@
               title: "EarthViewer",
               source: "HHMI BioInteractive",
               url: "https://www.biointeractive.org/classroom-resources/earthviewer",
-              note: "A big, beautiful deep-time globe. Better on a larger screen, another day. The calendar on this page is the bedtime one."
+              note: "A big, beautiful deep-time globe. Better on a larger screen, another day. The calendar on this page is the one for tonight."
             },
             {
               kind: "Read",

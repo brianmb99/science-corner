@@ -1,8 +1,8 @@
-/* Bedtime Science reader. Content lives in courses/*.js. */
+/* Science Corner reader. Content lives in courses/*.js. */
 (function () {
   "use strict";
 
-  var KEY = "bedtime-science-v1";
+  var KEY = "science-corner-v1";
   var WIDGETS = {
     pairs: mountPairs,
     copies: mountCopies,
@@ -40,7 +40,7 @@
   }
 
   function courses() {
-    return (window.BEDTIME_COURSES || []).slice().sort(function (a, b) {
+    return (window.SCIENCE_COURSES || []).slice().sort(function (a, b) {
       return String(b.added || "").localeCompare(String(a.added || ""));
     });
   }
@@ -149,7 +149,7 @@
       var night = state.theme === "night";
       button.textContent = night ? "Warmer" : "Dimmer";
       button.setAttribute("aria-pressed", night ? "true" : "false");
-      button.setAttribute("aria-label", night ? "Switch to the warmer lamp" : "Dim the lamp for bedtime");
+      button.setAttribute("aria-label", night ? "Switch to the warmer lamp" : "Dim the lamp");
     }
     paint();
     button.addEventListener("click", function () {
@@ -186,11 +186,11 @@
   }
 
   function renderHome(sheet) {
-    document.title = "Bedtime Science";
+    document.title = "Science Corner";
     var bar = el("header", "topbar");
     var heading = el("div");
-    heading.appendChild(text("p", "eyebrow", "For bedtime"));
-    heading.appendChild(text("h1", "", "Bedtime Science"));
+    heading.appendChild(text("p", "eyebrow", "Ten minutes a night"));
+    heading.appendChild(text("h1", "", "Science Corner"));
     bar.appendChild(heading);
     bar.appendChild(themeButton());
     sheet.appendChild(bar);
@@ -227,7 +227,7 @@
   }
 
   function renderCourse(sheet, course) {
-    document.title = course.title + " · Bedtime Science";
+    document.title = course.title + " · Science Corner";
     var lessons = course.lessons || [];
     var next = continueLesson(course);
     var undone = firstUndone(course);
@@ -279,13 +279,13 @@
   }
 
   function renderMissing(sheet) {
-    document.title = "Bedtime Science";
+    document.title = "Science Corner";
     sheet.appendChild(text("h1", "", "That page isn't here"));
     sheet.appendChild(backLink("#/", "Back to the courses"));
   }
 
   function renderLesson(sheet, course, lesson, index) {
-    document.title = lesson.title + " · Bedtime Science";
+    document.title = lesson.title + " · Science Corner";
     state.last = { course: course.id, lesson: lesson.id };
     save();
     var lessons = course.lessons;

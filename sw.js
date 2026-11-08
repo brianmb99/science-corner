@@ -1,7 +1,7 @@
-/* Offline copy of Bedtime Science. Scope is this site only (/bedtime-science/ on GitHub Pages). */
+/* Offline copy of Science Corner. Scope is this site only (/science-corner/ on GitHub Pages). */
 "use strict";
 
-const VERSION = "bedtime-science-v1";
+const VERSION = "science-corner-v1";
 const CACHE = VERSION;
 const PRECACHE = [
   "./",
@@ -33,7 +33,7 @@ self.addEventListener("activate", (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((name) => name.startsWith("bedtime-science-") && name !== CACHE)
+            .filter((name) => name.startsWith("science-corner-") && name !== CACHE)
             .map((name) => caches.delete(name))
         )
       )

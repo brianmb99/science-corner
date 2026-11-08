@@ -1,7 +1,7 @@
-/* Bedtime Science course catalog.
+/* Science Corner course catalog.
    To add a course later:
    1. Create courses/your-topic.js
-   2. Push one course object onto window.BEDTIME_COURSES
+   2. Push one course object onto window.SCIENCE_COURSES
    3. Add <script src="courses/your-topic.js"></script> in index.html before app.js
    The home page lists courses newest-first by the `added` date (YYYY-MM-DD).
    A course is { id, title, blurb, added, lessons: [...] }.
@@ -14,4 +14,4 @@
      lights: "one sentence to land on"
    }
    Paragraphs may use **bold** and [label](https://...) — nothing else is parsed. */
-window.BEDTIME_COURSES = window.BEDTIME_COURSES || [];
+window.SCIENCE_COURSES = window.SCIENCE_COURSES || [];
