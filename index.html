@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/bedtime-science/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f0e4">
+  <meta name="description" content="Short science lessons to read together at bedtime. The first course is evolution.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Bedtime">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Bedtime Science</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23143f44' width='16' height='16' rx='3'/%3E%3Ccircle fill='%23f3d7a1' cx='7' cy='8' r='4.2'/%3E%3Ccircle fill='%23143f44' cx='9' cy='7.2' r='3.3'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      var saved = JSON.parse(localStorage.getItem("bedtime-science-v1") || "{}").theme;
+      if (!saved && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) saved = "night";
+      document.documentElement.setAttribute("data-theme", saved === "night" ? "night" : "lamp");
+    } catch (e) {
+      document.documentElement.setAttribute("data-theme", "lamp");
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>
+    <main class="sheet">
+      <h1>Bedtime Science</h1>
+      <p>These lessons need JavaScript for the stories, the activities, and the checkmarks.</p>
+    </main>
+  </noscript>
+  <script src="catalog.js"></script>
+  <script src="courses/evolution.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
