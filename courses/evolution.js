@@ -4,6 +4,7 @@
   window.SCIENCE_COURSES.push({
     id: "evolution",
     title: "Evolution",
+    order: 2,
     added: "2026-11-08",
     blurb: "How living things change over time. The course covers DNA and inheritance, natural selection, the evidence from fossils and genetics, and human evolution.",
     lessons: [

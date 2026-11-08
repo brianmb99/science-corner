@@ -1,7 +1,7 @@
 /* Offline copy of Science Corner. Scope is this site only (/science-corner/ on GitHub Pages). */
 "use strict";
 
-const VERSION = "science-corner-v3";
+const VERSION = "science-corner-v4";
 const CACHE = VERSION;
 const PRECACHE = [
   "./",
@@ -9,6 +9,7 @@ const PRECACHE = [
   "styles.css",
   "catalog.js",
   "app.js",
+  "courses/atoms-molecules.js",
   "courses/evolution.js",
   "manifest.webmanifest",
   "icons/icon-192.png",

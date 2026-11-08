@@ -11,6 +11,10 @@
     homology: mountHomology,
     blindspot: mountBlindspot,
     tree: mountTree,
+    shells: mountShells,
+    ions: mountIons,
+    ionic: mountIonic,
+    halflife: mountHalflife,
   };
 
   var state = load();
@@ -41,6 +45,9 @@
 
   function courses() {
     return (window.SCIENCE_COURSES || []).slice().sort(function (a, b) {
+      var oa = typeof a.order === "number" ? a.order : 1000;
+      var ob = typeof b.order === "number" ? b.order : 1000;
+      if (oa !== ob) return oa - ob;
       return String(b.added || "").localeCompare(String(a.added || ""));
     });
   }
@@ -221,7 +228,7 @@
       ul.appendChild(li);
     });
     sheet.appendChild(ul);
-    sheet.appendChild(text("p", "colophon", "Progress is stored in this browser only. Links to other sites lead to Learn.Genetics at the University of Utah, HHMI BioInteractive, PBS Eons, Crash Course Kids, PhET at the University of Colorado, the Smithsonian Human Origins Program, and Understanding Evolution at UC Berkeley."));
+    sheet.appendChild(text("p", "colophon", "Progress is stored in this browser only. Links to other sites lead to PhET at the University of Colorado, TED-Ed, FuseSchool, Khan Academy, the American Chemical Society, Learn.Genetics at the University of Utah, HHMI BioInteractive, PBS Eons, Crash Course, the Smithsonian Human Origins Program, and Understanding Evolution at UC Berkeley."));
   }
 
   function renderCourse(sheet, course) {
@@ -907,6 +914,252 @@
       }
       container.appendChild(item);
     }
+    render();
+  }
+
+  var SUBSCRIPT = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉" };
+  var SUPERSCRIPT = { "2": "²", "3": "³" };
+  var SHELL_SIZES = [2, 8, 8, 2];
+  var FIRST_ELEMENTS = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca"];
+  var FIRST_NAMES = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminum", "Silicon", "Phosphorus", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"];
+
+  function shellCounts(electrons) {
+    var left = electrons;
+    var out = [];
+    for (var i = 0; i < SHELL_SIZES.length && left > 0; i++) {
+      var n = Math.min(SHELL_SIZES[i], left);
+      out.push(n);
+      left -= n;
+    }
+    return out;
+  }
+
+  function subscript(n) {
+    return n === 1 ? "" : String(n).split("").map(function (d) { return SUBSCRIPT[d]; }).join("");
+  }
+
+  function withCharge(symbol, charge) {
+    if (!charge) return symbol;
+    var size = Math.abs(charge);
+    return symbol + (size > 1 ? SUPERSCRIPT[size] || String(size) : "") + (charge > 0 ? "⁺" : "⁻");
+  }
+
+  function svgNode(name, attrs) {
+    var node = document.createElementNS("http://www.w3.org/2000/svg", name);
+    Object.keys(attrs || {}).forEach(function (key) { node.setAttribute(key, attrs[key]); });
+    return node;
+  }
+
+  function shellDiagram(protons, electrons) {
+    var counts = shellCounts(electrons);
+    var svg = svgNode("svg", { viewBox: "0 0 240 240", class: "shell-svg", role: "img" });
+    svg.setAttribute("aria-label", protons + " protons in the nucleus and " + electrons + " electrons, arranged " + (counts.join(", ") || "none"));
+    var radii = [34, 58, 82, 106];
+    counts.forEach(function (count, shell) {
+      svg.appendChild(svgNode("circle", { cx: 120, cy: 120, r: radii[shell], class: "ring" }));
+    });
+    svg.appendChild(svgNode("circle", { cx: 120, cy: 120, r: 22, class: "nucleus" }));
+    var label = svgNode("text", { x: 120, y: 125, class: "nucleus-label", "text-anchor": "middle" });
+    label.textContent = protons + "+";
+    svg.appendChild(label);
+    counts.forEach(function (count, shell) {
+      for (var k = 0; k < count; k++) {
+        var angle = ((-90 + (360 * k) / count + shell * 20) * Math.PI) / 180;
+        svg.appendChild(svgNode("circle", {
+          cx: (120 + radii[shell] * Math.cos(angle)).toFixed(1),
+          cy: (120 + radii[shell] * Math.sin(angle)).toFixed(1),
+          r: 6,
+          class: "electron" + (shell === counts.length - 1 ? " outer" : "")
+        }));
+      }
+    });
+    return svg;
+  }
+
+  function mountShells(host) {
+    var z = 11;
+    host.appendChild(text("h2", "", "Electron shells"));
+    host.appendChild(paragraph("Choose an element to see how its electrons are arranged in shells. The electrons in the outer shell are the valence electrons, and they are shaded."));
+    var picker = el("div", "elements");
+    picker.setAttribute("role", "group");
+    picker.setAttribute("aria-label", "Elements");
+    host.appendChild(picker);
+    var view = el("div", "shell-view");
+    host.appendChild(view);
+    function render() {
+      clear(picker);
+      FIRST_ELEMENTS.forEach(function (symbol, i) {
+        var btn = button(symbol, "elbtn" + (z === i + 1 ? " on" : ""), function () { z = i + 1; render(); });
+        btn.setAttribute("aria-label", FIRST_NAMES[i] + ", atomic number " + (i + 1));
+        btn.setAttribute("aria-pressed", z === i + 1 ? "true" : "false");
+        picker.appendChild(btn);
+      });
+      clear(view);
+      var counts = shellCounts(z);
+      view.appendChild(shellDiagram(z, z));
+      var info = el("div", "shell-info");
+      info.appendChild(text("p", "status", FIRST_NAMES[z - 1] + " (" + FIRST_ELEMENTS[z - 1] + "), atomic number " + z));
+      info.appendChild(paragraph("It has " + z + (z === 1 ? " proton and " : " protons and ") + z + (z === 1 ? " electron" : " electrons") + ". The electrons are arranged " + counts.join(", ") + "."));
+      var outer = counts[counts.length - 1];
+      var line = "The outer shell has " + outer + (outer === 1 ? " electron." : " electrons.");
+      if (z === 2 || z === 10 || z === 18) line += " The outer shell is full, so this element hardly reacts.";
+      info.appendChild(paragraph(line));
+      view.appendChild(info);
+    }
+    render();
+  }
+
+  var ION_ELEMENTS = [
+    { s: "Li", n: "Lithium", z: 3 }, { s: "Na", n: "Sodium", z: 11 }, { s: "K", n: "Potassium", z: 19 },
+    { s: "Mg", n: "Magnesium", z: 12 }, { s: "Ca", n: "Calcium", z: 20 }, { s: "Al", n: "Aluminum", z: 13 },
+    { s: "O", n: "Oxygen", z: 8 }, { s: "F", n: "Fluorine", z: 9 }, { s: "S", n: "Sulfur", z: 16 }, { s: "Cl", n: "Chlorine", z: 17 }
+  ];
+
+  function mountIons(host) {
+    var index = 1;
+    var electrons = 11;
+    host.appendChild(text("h2", "", "Make an ion"));
+    host.appendChild(paragraph("Choose an element, then add or remove electrons. The number of protons never changes. The charge is the number of protons minus the number of electrons."));
+    var picker = el("div", "elements");
+    picker.setAttribute("role", "group");
+    picker.setAttribute("aria-label", "Elements");
+    host.appendChild(picker);
+    var view = el("div", "shell-view");
+    host.appendChild(view);
+    function limits() {
+      var item = ION_ELEMENTS[index];
+      return { min: Math.max(1, item.z - 3), max: Math.min(item.z + 3, 20) };
+    }
+    function render() {
+      var item = ION_ELEMENTS[index];
+      var range = limits();
+      clear(picker);
+      ION_ELEMENTS.forEach(function (entry, i) {
+        var btn = button(entry.s, "elbtn" + (i === index ? " on" : ""), function () {
+          index = i;
+          electrons = entry.z;
+          render();
+        });
+        btn.setAttribute("aria-label", entry.n);
+        btn.setAttribute("aria-pressed", i === index ? "true" : "false");
+        picker.appendChild(btn);
+      });
+      clear(view);
+      var charge = item.z - electrons;
+      view.appendChild(shellDiagram(item.z, electrons));
+      var info = el("div", "shell-info");
+      info.appendChild(text("p", "status", item.n + ": " + withCharge(item.s, charge)));
+      info.appendChild(paragraph(item.z + " protons, " + electrons + " electrons. Charge: " + (charge > 0 ? "+" : charge < 0 ? "-" : "") + Math.abs(charge) + ". Arrangement: " + shellCounts(electrons).join(", ") + "."));
+      if (charge === 0) {
+        info.appendChild(paragraph("This is a neutral atom. It has as many electrons as protons."));
+      } else if (electrons === 2 || electrons === 10 || electrons === 18) {
+        var gas = electrons === 2 ? "helium" : electrons === 10 ? "neon" : "argon";
+        info.appendChild(paragraph("The electrons have the same arrangement as " + gas + ", with a full outer shell. This is the ion that " + item.n.toLowerCase() + " usually forms."));
+      } else {
+        info.appendChild(paragraph("This ion does not have a full outer shell. It is not a common ion of this element."));
+      }
+      var row = el("div", "row");
+      var remove = button("Remove an electron", "primary", function () { electrons -= 1; render(); });
+      var add = button("Add an electron", "primary", function () { electrons += 1; render(); });
+      remove.disabled = electrons <= range.min;
+      add.disabled = electrons >= range.max;
+      row.appendChild(remove);
+      row.appendChild(add);
+      row.appendChild(button("Reset", "ghost", function () { electrons = item.z; render(); }));
+      info.appendChild(row);
+      view.appendChild(info);
+    }
+    render();
+  }
+
+  var CATIONS = [["Na", "sodium", 1], ["K", "potassium", 1], ["Mg", "magnesium", 2], ["Ca", "calcium", 2], ["Al", "aluminum", 3]];
+  var ANIONS = [["F", "fluoride", 1], ["Cl", "chloride", 1], ["O", "oxide", 2], ["S", "sulfide", 2]];
+
+  function mountIonic(host) {
+    var c = 0;
+    var a = 1;
+    host.appendChild(text("h2", "", "Ionic formulas"));
+    host.appendChild(paragraph("Choose a positive ion and a negative ion. The formula shows how many of each are needed for the charges to add up to zero."));
+    var view = el("div");
+    host.appendChild(view);
+    function group(label, items, selected, onPick, charge) {
+      view.appendChild(text("p", "label", label));
+      var row = el("div", "elements");
+      row.setAttribute("role", "group");
+      row.setAttribute("aria-label", label);
+      items.forEach(function (item, i) {
+        var btn = button(withCharge(item[0], charge * item[2]), "elbtn wide" + (i === selected ? " on" : ""), function () { onPick(i); });
+        btn.setAttribute("aria-label", item[1] + " ion");
+        btn.setAttribute("aria-pressed", i === selected ? "true" : "false");
+        row.appendChild(btn);
+      });
+      view.appendChild(row);
+    }
+    function render() {
+      clear(view);
+      group("Positive ion", CATIONS, c, function (i) { c = i; render(); }, 1);
+      group("Negative ion", ANIONS, a, function (i) { a = i; render(); }, -1);
+      var cat = CATIONS[c];
+      var an = ANIONS[a];
+      var lcm = 1;
+      while (lcm % cat[2] !== 0 || lcm % an[2] !== 0) lcm += 1;
+      var nc = lcm / cat[2];
+      var na = lcm / an[2];
+      var chips = el("div", "chips");
+      chips.setAttribute("aria-hidden", "true");
+      for (var i = 0; i < nc; i++) chips.appendChild(text("span", "chip cation", withCharge(cat[0], cat[2])));
+      for (var j = 0; j < na; j++) chips.appendChild(text("span", "chip anion", withCharge(an[0], -an[2])));
+      view.appendChild(chips);
+      var formula = cat[0] + subscript(nc) + an[0] + subscript(na);
+      var name = cat[1].charAt(0).toUpperCase() + cat[1].slice(1) + " " + an[1];
+      view.appendChild(text("p", "status", name + ": " + formula));
+      view.appendChild(paragraph(nc + " × (+" + cat[2] + ") + " + na + " × (−" + an[2] + ") = " + (nc * cat[2]) + " − " + (na * an[2]) + " = 0"));
+      view.appendChild(paragraph("The formula shows the ratio of ions in the crystal. It does not describe a single molecule."));
+    }
+    render();
+  }
+
+  function mountHalflife(host) {
+    var TOTAL = 64;
+    var alive;
+    var history;
+    host.appendChild(text("h2", "", "Half-life model"));
+    host.appendChild(paragraph("Each square is one nucleus. Each press of the button is one half-life. Every nucleus that is left has a 50 percent chance of decaying, like a coin flip. The number left falls by about half each time, but the exact numbers vary because every nucleus decays at random."));
+    var view = el("div");
+    host.appendChild(view);
+    function reset() {
+      alive = [];
+      for (var i = 0; i < TOTAL; i++) alive.push(true);
+      history = [TOTAL];
+    }
+    function left() {
+      return alive.filter(Boolean).length;
+    }
+    function render() {
+      clear(view);
+      var grid = el("div", "nuclei");
+      grid.setAttribute("aria-hidden", "true");
+      alive.forEach(function (on) { grid.appendChild(el("i", on ? "on" : "")); });
+      view.appendChild(grid);
+      var rounds = history.length - 1;
+      view.appendChild(text("p", "status", rounds + (rounds === 1 ? " half-life" : " half-lives") + " passed. " + left() + " of " + TOTAL + " nuclei left."));
+      var list = el("div", "tally");
+      history.forEach(function (count, i) {
+        list.appendChild(text("p", "", (i === 0 ? "At the start" : "After " + i + (i === 1 ? " half-life" : " half-lives")) + ": " + count + " left. Expected about " + Math.round((TOTAL / Math.pow(2, i)) * 10) / 10 + "."));
+      });
+      view.appendChild(list);
+      var row = el("div", "row");
+      var step = button("Wait one half-life", "primary", function () {
+        alive = alive.map(function (on) { return on && Math.random() < 0.5; });
+        history.push(left());
+        render();
+      });
+      step.disabled = left() === 0;
+      row.appendChild(step);
+      row.appendChild(button("Start over", "ghost", function () { reset(); render(); }));
+      view.appendChild(row);
+    }
+    reset();
     render();
   }
 

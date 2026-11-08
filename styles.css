@@ -1,6 +1,4 @@
-/* Science Corner — a lamp on a dark bedside table.
-   Related to the study guides (warm paper, serif titles, one column)
-   and deliberately not the same book: lagoon and honey, night-first room. */
+/* Science Corner styles. */
 
 *,
 *::before,
@@ -486,3 +484,38 @@ html[data-theme="night"] .check.on { color: #14241a; }
     border-color: var(--honey);
   }
 }
+
+.elements { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.elbtn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 8px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.elbtn.wide { min-width: 64px; }
+.elbtn.on { border-color: var(--accent); background: var(--review); }
+.shell-view { display: grid; gap: 12px; align-items: center; margin-top: 8px; }
+.shell-svg { width: 100%; max-width: 260px; height: auto; margin: 0 auto; display: block; }
+.shell-svg .ring { fill: none; stroke: var(--line); stroke-width: 2; }
+.shell-svg .nucleus { fill: var(--honey); }
+.shell-svg .nucleus-label { fill: var(--paper-2); font-size: 14px; font-weight: 700; }
+.shell-svg .electron { fill: var(--accent); }
+.shell-svg .electron.outer { fill: var(--good); stroke: var(--ink); stroke-width: 1.5; }
+.shell-info p { margin: 6px 0; }
+.shell-info button:disabled { opacity: 0.45; cursor: default; }
+@media (min-width: 640px) { .shell-view { grid-template-columns: 260px 1fr; } }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 12px; }
+.chip { padding: 4px 10px; border-radius: 999px; font-weight: 700; border: 2px solid var(--line); }
+.chip.cation { background: var(--review); }
+.chip.anion { background: var(--aside); }
+.nuclei { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; max-width: 420px; margin: 10px 0; }
+.nuclei i { aspect-ratio: 1; border: 2px solid var(--line); border-radius: 4px; }
+.nuclei i.on { background: var(--accent); border-color: var(--accent); }
+.tally p { margin: 2px 0; }
+.widget button:disabled { opacity: 0.45; cursor: default; }
