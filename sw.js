@@ -1,7 +1,7 @@
 /* Offline copy of Science Corner. Scope is this site only (/science-corner/ on GitHub Pages). */
 "use strict";
 
-const VERSION = "science-corner-v4";
+const VERSION = "science-corner-v5";
 const CACHE = VERSION;
 const PRECACHE = [
   "./",
@@ -42,11 +42,17 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+function inApp(url) {
+  const scopePath = new URL(self.registration.scope).pathname;
+  const prefix = scopePath.endsWith("/") ? scopePath : scopePath + "/";
+  return url.origin === self.location.origin && (url.pathname === prefix.slice(0, -1) || url.pathname.startsWith(prefix));
+}
+
 self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET") return;
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin) return;
+  if (!inApp(url)) return;
   event.respondWith(
     fetch(request)
       .then((response) => {
