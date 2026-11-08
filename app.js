@@ -915,7 +915,7 @@
     window.addEventListener("load", function () {
       var script = document.querySelector('script[src$="app.js"]');
       var base = script && script.src ? new URL(".", script.src) : new URL(".", location.href);
-      navigator.serviceWorker.register(new URL("sw.js", base).href).catch(function () {});
+      navigator.serviceWorker.register(new URL("sw.js", base).href, { scope: base.href }).catch(function () {});
     });
   }
 
